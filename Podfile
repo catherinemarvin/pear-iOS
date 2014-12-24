@@ -3,7 +3,9 @@
 
 target 'Pear' do
 
-pod 'AFNetworking', '~> 2.0'
+pod 'AFNetworking'
+pod 'Masonry'
+pod 'MagicalRecord'
 
 end
 
