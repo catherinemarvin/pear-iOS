@@ -7,12 +7,19 @@
 //
 
 #import "KHLoginViewController.h"
+#import "KHLoginView.h"
 
 @interface KHLoginViewController ()
 
 @end
 
 @implementation KHLoginViewController
+
+- (void)loadView {
+    CGRect frame = [UIScreen mainScreen].applicationFrame;
+    KHLoginView *loginView = [[KHLoginView alloc] initWithFrame:frame];
+    self.view = loginView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

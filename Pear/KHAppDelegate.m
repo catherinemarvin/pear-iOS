@@ -7,12 +7,16 @@
 //
 
 #import "KHAppDelegate.h"
+#import "KHLoginViewController.h"
 
 @implementation KHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    KHLoginViewController *loginVC = [[KHLoginViewController alloc] init];
+    self.window.rootViewController = loginVC;
     [self.window makeKeyAndVisible];
     return YES;
 }
