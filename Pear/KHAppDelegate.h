@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KHAppDelegate : UIResponder
+@interface KHAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (nonatomic, strong) UIWindow *window;
 
 @end
