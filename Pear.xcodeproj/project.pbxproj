@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6E0126181A4B5A4400FB1736 /* KHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126171A4B5A4400FB1736 /* KHLoginViewController.m */; };
+		6E01261B1A4B5C9900FB1736 /* KHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E01261A1A4B5C9900FB1736 /* KHAppDelegate.m */; };
 		6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774A91A4A0FF6006C0B51 /* main.m */; };
-		6E4774AD1A4A0FF6006C0B51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774AC1A4A0FF6006C0B51 /* AppDelegate.m */; };
 		6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */; };
 		6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B71A4A0FF6006C0B51 /* Images.xcassets */; };
 		6E4774BB1A4A0FF6006C0B51 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B91A4A0FF6006C0B51 /* LaunchScreen.xib */; };
@@ -32,11 +32,11 @@
 		6755C4CA65754E2206D13760 /* Pods-Pear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pear.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pear/Pods-Pear.release.xcconfig"; sourceTree = "<group>"; };
 		6E0126161A4B5A4400FB1736 /* KHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLoginViewController.h; sourceTree = "<group>"; };
 		6E0126171A4B5A4400FB1736 /* KHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHLoginViewController.m; sourceTree = "<group>"; };
+		6E0126191A4B5C9900FB1736 /* KHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHAppDelegate.h; sourceTree = "<group>"; };
+		6E01261A1A4B5C9900FB1736 /* KHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHAppDelegate.m; sourceTree = "<group>"; };
 		6E4774A41A4A0FF6006C0B51 /* Pear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4774A81A4A0FF6006C0B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4774A91A4A0FF6006C0B51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6E4774AB1A4A0FF6006C0B51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6E4774AC1A4A0FF6006C0B51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6E4774AF1A4A0FF6006C0B51 /* Pear.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pear.xcdatamodel; sourceTree = "<group>"; };
 		6E4774B71A4A0FF6006C0B51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6E4774BA1A4A0FF6006C0B51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -98,12 +98,12 @@
 			isa = PBXGroup;
 			children = (
 				6E0126151A4B5A1200FB1736 /* View Controllers */,
-				6E4774AB1A4A0FF6006C0B51 /* AppDelegate.h */,
-				6E4774AC1A4A0FF6006C0B51 /* AppDelegate.m */,
 				6E4774B71A4A0FF6006C0B51 /* Images.xcassets */,
 				6E4774B91A4A0FF6006C0B51 /* LaunchScreen.xib */,
 				6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */,
 				6E4774A71A4A0FF6006C0B51 /* Supporting Files */,
+				6E0126191A4B5C9900FB1736 /* KHAppDelegate.h */,
+				6E01261A1A4B5C9900FB1736 /* KHAppDelegate.m */,
 			);
 			path = Pear;
 			sourceTree = "<group>";
@@ -285,7 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E4774AD1A4A0FF6006C0B51 /* AppDelegate.m in Sources */,
+				6E01261B1A4B5C9900FB1736 /* KHAppDelegate.m in Sources */,
 				6E0126181A4B5A4400FB1736 /* KHLoginViewController.m in Sources */,
 				6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */,
 				6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */,
