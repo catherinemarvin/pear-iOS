@@ -33,11 +33,13 @@
         _signInButton = [[UIButton alloc] init];
         [_signInButton setTitle:NSLocalizedString(@"Sign in", nil) forState:UIControlStateNormal];
         [_signInButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_signInButton addTarget:self action:@selector(_signInTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_signInButton];
         
         _signUpButton = [[UIButton alloc] init];
         [_signUpButton setTitle:NSLocalizedString(@"Sign up", nil) forState:UIControlStateNormal];
         [_signUpButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_signUpButton addTarget:self action:@selector(_signUpTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_signUpButton];
         
         [self _initializeAutolayout];
@@ -71,6 +73,16 @@
         make.top.equalTo(self.signInButton.mas_bottom);
         make.width.equalTo(self.usernameField);
     }];
+    
+}
+
+#pragma mark - Button Taps
+
+- (void)_signInTapped:(id)sender {
+    
+}
+
+- (void)_signUpTapped:(id)sender {
     
 }
 
