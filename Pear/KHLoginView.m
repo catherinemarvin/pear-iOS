@@ -32,10 +32,12 @@
         
         _signInButton = [[UIButton alloc] init];
         [_signInButton setTitle:NSLocalizedString(@"Sign in", nil) forState:UIControlStateNormal];
+        [_signInButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self addSubview:_signInButton];
         
         _signUpButton = [[UIButton alloc] init];
         [_signUpButton setTitle:NSLocalizedString(@"Sign up", nil) forState:UIControlStateNormal];
+        [_signUpButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self addSubview:_signUpButton];
         
         [self _initializeAutolayout];
