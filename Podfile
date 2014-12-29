@@ -8,6 +8,7 @@ target 'Pear' do
 pod 'AFNetworking'
 pod 'Masonry'
 pod 'MagicalRecord'
+pod 'CocoaLumberjack'
 
 end
 

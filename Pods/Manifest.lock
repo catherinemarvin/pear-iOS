@@ -20,6 +20,11 @@ PODS:
   - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions (= 1.9.2)
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
+    - CocoaLumberjack/Core
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
@@ -27,11 +32,13 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - CocoaLumberjack
   - MagicalRecord
   - Masonry
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
 
