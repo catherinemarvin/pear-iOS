@@ -8,6 +8,7 @@
 
 #import "KHLoginView.h"
 #import "Masonry.h"
+#import "DDLog.h"
 
 @interface KHLoginView()
 
@@ -17,6 +18,8 @@
 @property (nonatomic, strong) UIButton *signUpButton;
 
 @end
+
+static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @implementation KHLoginView
 
@@ -79,10 +82,11 @@
 #pragma mark - Button Taps
 
 - (void)_signInTapped:(id)sender {
-    
+    DDLogInfo(@"Sign in tapped");
 }
 
 - (void)_signUpTapped:(id)sender {
+    DDLogInfo(@"Sign up tapped");
     
 }
 
