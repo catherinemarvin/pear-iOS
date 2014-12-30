@@ -43,6 +43,7 @@ static CGFloat KHkButtonHeight = 44.0f;
         _passwordField.placeholder = NSLocalizedString(@"Password", nil);
         _passwordField.backgroundColor = [UIColor whiteColor];
         _passwordField.textAlignment = NSTextAlignmentCenter;
+        _passwordField.secureTextEntry = YES;
         [self addSubview:_passwordField];
         
         _signInButton = [[UIButton alloc] init];
