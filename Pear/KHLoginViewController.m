@@ -9,9 +9,10 @@
 #import "KHLoginViewController.h"
 #import "KHLoginView.h"
 
-@interface KHLoginViewController ()
+@interface KHLoginViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UITextField *activeField;
 
 @end
 
@@ -23,6 +24,9 @@
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:frame];
     
     KHLoginView *loginView = [[KHLoginView alloc] initWithFrame:scroll.bounds];
+    loginView.usernameField.delegate = self;
+    loginView.passwordField.delegate = self;
+    
     [scroll addSubview:loginView];
     
     scroll.contentSize = loginView.bounds.size;
@@ -55,5 +59,15 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.activeField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    self.activeField = nil;
 }
 @end
