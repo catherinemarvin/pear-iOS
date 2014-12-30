@@ -443,10 +443,7 @@
 				INFOPLIST_FILE = Pear/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WARNING_CFLAGS = (
-					"-Wextra",
-					"-Wall",
-				);
+				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
 		};
@@ -459,10 +456,7 @@
 				INFOPLIST_FILE = Pear/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WARNING_CFLAGS = (
-					"-Wextra",
-					"-Wall",
-				);
+				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
 		};
