@@ -17,8 +17,15 @@
 
 - (void)loadView {
     CGRect frame = [UIScreen mainScreen].applicationFrame;
-    KHLoginView *loginView = [[KHLoginView alloc] initWithFrame:frame];
-    self.view = loginView;
+    
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:frame];
+    
+    KHLoginView *loginView = [[KHLoginView alloc] initWithFrame:scroll.bounds];
+    [scroll addSubview:loginView];
+    
+    scroll.contentSize = loginView.bounds.size;
+    
+    self.view = scroll;
 }
 
 - (void)viewDidLoad {
