@@ -21,16 +21,26 @@
 
 static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
+static CGFloat KHkButtonHeight = 44.0f;
+
 @implementation KHLoginView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _usernameField = [[UITextField alloc] init];
         _usernameField.placeholder = NSLocalizedString(@"Username", nil);
+        _usernameField.layer.cornerRadius = 2.0f;
+        _usernameField.layer.masksToBounds = YES;
+        _usernameField.layer.borderColor = [UIColor grayColor].CGColor;
+        _usernameField.layer.borderWidth = 1.0f;
         [self addSubview:_usernameField];
         
         _passwordField = [[UITextField alloc] init];
         _passwordField.placeholder = NSLocalizedString(@"Password", nil);
+        _passwordField.layer.cornerRadius = 2.0f;
+        _passwordField.layer.masksToBounds = YES;
+        _passwordField.layer.borderColor = [UIColor grayColor].CGColor;
+        _passwordField.layer.borderWidth = 1.0f;
         [self addSubview:_passwordField];
         
         _signInButton = [[UIButton alloc] init];
@@ -58,11 +68,13 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         make.bottom.equalTo(self.passwordField.mas_top);
         make.left.equalTo(self).with.offset(padding);
         make.right.equalTo(self).with.offset(-padding);
+        make.height.equalTo(@(KHkButtonHeight));
     }];
     
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
         make.width.equalTo(self.usernameField);
+        make.height.equalTo(@(KHkButtonHeight));
     }];
     
     [self.signInButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -83,6 +95,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)_signInTapped:(id)sender {
     DDLogInfo(@"Sign in tapped");
+    [self.usernameField resignFirstResponder];
 }
 
 - (void)_signUpTapped:(id)sender {
