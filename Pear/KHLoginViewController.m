@@ -11,6 +11,7 @@
 #import <MBProgressHUD.h>
 #import <AFNetworking.h>
 #import <CocoaLumberjack/DDLog.h>
+#import "KHSignUpViewController.h"
 
 static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
@@ -104,7 +105,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 #pragma mark - Button Tap
 - (void)_signUpTapped:(id)sender {
-    DDLogInfo(@"Sign up tapped");
+    KHSignUpViewController *signUp = [[KHSignUpViewController alloc] init];
+    [self.navigationController pushViewController:signUp animated:YES];
 }
 
 #pragma mark - Login
