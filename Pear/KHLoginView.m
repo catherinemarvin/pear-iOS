@@ -33,18 +33,12 @@ static CGFloat KHkButtonHeight = 44.0f;
         
         _usernameField = [[UITextField alloc] init];
         _usernameField.placeholder = NSLocalizedString(@"Username", nil);
-        _usernameField.layer.cornerRadius = 2.0f;
-        _usernameField.layer.masksToBounds = YES;
-        _usernameField.layer.borderColor = [UIColor grayColor].CGColor;
-        _usernameField.layer.borderWidth = 1.0f;
+        [self _setupTextField:_usernameField];
         [self addSubview:_usernameField];
         
         _passwordField = [[UITextField alloc] init];
         _passwordField.placeholder = NSLocalizedString(@"Password", nil);
-        _passwordField.layer.cornerRadius = 2.0f;
-        _passwordField.layer.masksToBounds = YES;
-        _passwordField.layer.borderColor = [UIColor grayColor].CGColor;
-        _passwordField.layer.borderWidth = 1.0f;
+        [self _setupTextField:_passwordField];
         [self addSubview:_passwordField];
         
         _signInButton = [[UIButton alloc] init];
@@ -94,6 +88,15 @@ static CGFloat KHkButtonHeight = 44.0f;
         make.width.equalTo(self.usernameField);
     }];
     
+}
+
+- (void)_setupTextField:(UITextField *)textField {
+    textField.backgroundColor = [UIColor whiteColor];
+    textField.layer.cornerRadius = 2.0f;
+    textField.layer.masksToBounds = YES;
+    textField.layer.borderColor = [UIColor grayColor].CGColor;
+    textField.layer.borderWidth = 1.0f;
+    textField.textAlignment = NSTextAlignmentCenter;
 }
 
 #pragma mark - Button Taps
