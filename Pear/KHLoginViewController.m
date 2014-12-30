@@ -52,20 +52,18 @@
     
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
+    
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0);
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     
-    CGRect aRect = self.view.frame;
-    aRect.size.height -= keyboardSize.height;
+    CGSize contentSize = self.scrollView.contentSize;
+    contentSize.height -= keyboardSize.height;
+    self.scrollView.contentSize = contentSize;
     
-    CGPoint origin = self.loginView.signUpButton.frame.origin;
-    origin.y += CGRectGetHeight(self.loginView.signUpButton.frame);
     
-    if (!CGRectContainsPoint(aRect, origin)) {
-        CGPoint scrollPoint = CGPointMake(0, self.loginView.signUpButton.frame.origin.y + self.loginView.signUpButton.frame.size.height - (aRect.size.height));
-        [self.scrollView setContentOffset:scrollPoint animated:YES];
-    }
+    CGPoint scrollPoint = CGPointMake(0, CGRectGetMinY(self.loginView.usernameField.frame));
+    [self.scrollView setContentOffset:scrollPoint animated:YES];
 }
 
 - (void)_keyboardWillHide:(NSNotification *)n {
