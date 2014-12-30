@@ -32,6 +32,8 @@
     [scroll addSubview:loginView];
     
     scroll.contentSize = loginView.bounds.size;
+    scroll.alwaysBounceVertical = YES;
+    scroll.backgroundColor = loginView.backgroundColor;
     
     self.scrollView = scroll;
     self.loginView = loginView;
@@ -70,6 +72,7 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
+    
 }
 
 #pragma mark - UITextFieldDelegate
