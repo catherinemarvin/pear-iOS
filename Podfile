@@ -9,6 +9,7 @@ pod 'AFNetworking'
 pod 'Masonry'
 pod 'MagicalRecord'
 pod 'CocoaLumberjack'
+pod 'MBProgressHUD'
 
 end
 
