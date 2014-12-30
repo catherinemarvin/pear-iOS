@@ -8,7 +8,8 @@
 
 #import "KHLoginViewController.h"
 #import "KHLoginView.h"
-#import <MBProgressHUD/MBProgressHUD.h>
+#import <MBProgressHUD.h>
+#import <AFNetworking.h>
 
 @interface KHLoginViewController ()<UITextFieldDelegate, UIAlertViewDelegate>
 
