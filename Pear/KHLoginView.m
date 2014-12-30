@@ -48,14 +48,12 @@ static CGFloat KHkButtonHeight = 44.0f;
         _signInButton = [[UIButton alloc] init];
         [self _setupElement:_signInButton];
         [_signInButton setTitle:NSLocalizedString(@"Sign in", nil) forState:UIControlStateNormal];
-        [_signInButton addTarget:self action:@selector(_signInTapped:) forControlEvents:UIControlEventTouchUpInside];
         [_signInButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"79B4D5"]] forState:UIControlStateNormal];
         [self addSubview:_signInButton];
         
         _signUpButton = [[UIButton alloc] init];
         [_signUpButton setTitle:NSLocalizedString(@"Sign up", nil) forState:UIControlStateNormal];
         [_signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_signUpButton addTarget:self action:@selector(_signUpTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_signUpButton];
         
         [self _initializeAutolayout];
@@ -103,18 +101,6 @@ static CGFloat KHkButtonHeight = 44.0f;
     view.layer.masksToBounds = YES;
     view.layer.borderColor = [UIColor grayColor].CGColor;
     view.layer.borderWidth = 1.0f;
-}
-
-#pragma mark - Button Taps
-
-- (void)_signInTapped:(id)sender {
-    DDLogInfo(@"Sign in tapped");
-    [self.usernameField resignFirstResponder];
-}
-
-- (void)_signUpTapped:(id)sender {
-    DDLogInfo(@"Sign up tapped");
-    
 }
 
 @end
