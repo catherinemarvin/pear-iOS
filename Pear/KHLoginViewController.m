@@ -25,9 +25,10 @@
     
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:frame];
     
-    KHLoginView *loginView = [[KHLoginView alloc] initWithFrame:scroll.bounds];
+    KHLoginView *loginView = [[KHLoginView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(scroll.bounds), 400)];
     loginView.usernameField.delegate = self;
     loginView.passwordField.delegate = self;
+    [loginView setCenter:scroll.center];
     
     [scroll addSubview:loginView];
     
@@ -63,9 +64,11 @@
     contentSize.height -= keyboardSize.height;
     self.scrollView.contentSize = contentSize;
     
+    CGPoint centerPoint = self.loginView.center;
+    centerPoint.y -= floorf(keyboardSize.height / 2);
     
-    CGPoint scrollPoint = CGPointMake(0, CGRectGetMinY(self.loginView.usernameField.frame));
-    [self.scrollView setContentOffset:scrollPoint animated:YES];
+    self.loginView.center = centerPoint;
+    
 }
 
 - (void)_keyboardWillHide:(NSNotification *)n {
@@ -73,6 +76,7 @@
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     
+    self.loginView.center = self.view.center;
 }
 
 #pragma mark - UITextFieldDelegate
