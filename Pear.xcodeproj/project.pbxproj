@@ -12,6 +12,7 @@
 		6E01261F1A4B623B00FB1736 /* KHLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E01261E1A4B623B00FB1736 /* KHLoginView.m */; };
 		6E0126231A523F3E00FB1736 /* UIColor+KHHexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126221A523F3E00FB1736 /* UIColor+KHHexString.m */; };
 		6E0126261A52432600FB1736 /* UIImage+KHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126251A52432600FB1736 /* UIImage+KHAdditions.m */; };
+		6E01262A1A528DD700FB1736 /* KHSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126291A528DD700FB1736 /* KHSignUpViewController.m */; };
 		6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774A91A4A0FF6006C0B51 /* main.m */; };
 		6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */; };
 		6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B71A4A0FF6006C0B51 /* Images.xcassets */; };
@@ -43,6 +44,8 @@
 		6E0126221A523F3E00FB1736 /* UIColor+KHHexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KHHexString.m"; sourceTree = "<group>"; };
 		6E0126241A52432600FB1736 /* UIImage+KHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KHAdditions.h"; sourceTree = "<group>"; };
 		6E0126251A52432600FB1736 /* UIImage+KHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KHAdditions.m"; sourceTree = "<group>"; };
+		6E0126281A528DD700FB1736 /* KHSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignUpViewController.h; sourceTree = "<group>"; };
+		6E0126291A528DD700FB1736 /* KHSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignUpViewController.m; sourceTree = "<group>"; };
 		6E4774A41A4A0FF6006C0B51 /* Pear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4774A81A4A0FF6006C0B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4774A91A4A0FF6006C0B51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,8 +80,7 @@
 		6E0126151A4B5A1200FB1736 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6E0126161A4B5A4400FB1736 /* KHLoginViewController.h */,
-				6E0126171A4B5A4400FB1736 /* KHLoginViewController.m */,
+				6E0126271A528DAC00FB1736 /* Register/Login */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -101,6 +103,17 @@
 				6E0126251A52432600FB1736 /* UIImage+KHAdditions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		6E0126271A528DAC00FB1736 /* Register/Login */ = {
+			isa = PBXGroup;
+			children = (
+				6E0126161A4B5A4400FB1736 /* KHLoginViewController.h */,
+				6E0126171A4B5A4400FB1736 /* KHLoginViewController.m */,
+				6E0126281A528DD700FB1736 /* KHSignUpViewController.h */,
+				6E0126291A528DD700FB1736 /* KHSignUpViewController.m */,
+			);
+			name = Register/Login;
 			sourceTree = "<group>";
 		};
 		6E47749B1A4A0FF6006C0B51 = {
@@ -319,6 +332,7 @@
 				6E01261B1A4B5C9900FB1736 /* KHAppDelegate.m in Sources */,
 				6E0126181A4B5A4400FB1736 /* KHLoginViewController.m in Sources */,
 				6E0126261A52432600FB1736 /* UIImage+KHAdditions.m in Sources */,
+				6E01262A1A528DD700FB1736 /* KHSignUpViewController.m in Sources */,
 				6E01261F1A4B623B00FB1736 /* KHLoginView.m in Sources */,
 				6E0126231A523F3E00FB1736 /* UIColor+KHHexString.m in Sources */,
 				6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */,
