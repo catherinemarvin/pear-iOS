@@ -60,10 +60,6 @@
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     
-    CGSize contentSize = self.scrollView.contentSize;
-    contentSize.height -= keyboardSize.height;
-    self.scrollView.contentSize = contentSize;
-    
     CGPoint centerPoint = self.loginView.center;
     centerPoint.y -= floorf(keyboardSize.height / 2);
     
