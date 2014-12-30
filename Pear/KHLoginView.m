@@ -32,18 +32,22 @@ static CGFloat KHkButtonHeight = 44.0f;
         self.backgroundColor = [UIColor colorWithHexString:@"3B7FB2"];
         
         _usernameField = [[UITextField alloc] init];
+        [self _setupElement:_usernameField];
         _usernameField.placeholder = NSLocalizedString(@"Username", nil);
-        [self _setupTextField:_usernameField];
+        _usernameField.backgroundColor = [UIColor whiteColor];
+        _usernameField.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_usernameField];
         
         _passwordField = [[UITextField alloc] init];
+        [self _setupElement:_passwordField];
         _passwordField.placeholder = NSLocalizedString(@"Password", nil);
-        [self _setupTextField:_passwordField];
+        _passwordField.backgroundColor = [UIColor whiteColor];
+        _passwordField.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_passwordField];
         
         _signInButton = [[UIButton alloc] init];
+        [self _setupElement:_signInButton];
         [_signInButton setTitle:NSLocalizedString(@"Sign in", nil) forState:UIControlStateNormal];
-        [_signInButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_signInButton addTarget:self action:@selector(_signInTapped:) forControlEvents:UIControlEventTouchUpInside];
         [_signInButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"79B4D5"]] forState:UIControlStateNormal];
         [self addSubview:_signInButton];
@@ -62,9 +66,11 @@ static CGFloat KHkButtonHeight = 44.0f;
 - (void)_initializeAutolayout {
     CGFloat padding = 40.0f;
     
+    CGFloat verticalPadding = 20.0f;
+    
     [self.usernameField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.bottom.equalTo(self.passwordField.mas_top);
+        make.bottom.equalTo(self.passwordField.mas_top).with.offset(-verticalPadding);
         make.left.equalTo(self).with.offset(padding);
         make.right.equalTo(self).with.offset(-padding);
         make.height.equalTo(@(KHkButtonHeight));
@@ -78,25 +84,25 @@ static CGFloat KHkButtonHeight = 44.0f;
     
     [self.signInButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self.passwordField.mas_bottom);
+        make.top.equalTo(self.passwordField.mas_bottom).with.offset(verticalPadding);
         make.width.equalTo(self.usernameField);
+        make.height.equalTo(@(KHkButtonHeight));
     }];
     
     [self.signUpButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.top.equalTo(self.signInButton.mas_bottom);
+        make.top.equalTo(self.signInButton.mas_bottom).with.offset(verticalPadding);
         make.width.equalTo(self.usernameField);
+        make.height.equalTo(@(KHkButtonHeight));
     }];
     
 }
 
-- (void)_setupTextField:(UITextField *)textField {
-    textField.backgroundColor = [UIColor whiteColor];
-    textField.layer.cornerRadius = 2.0f;
-    textField.layer.masksToBounds = YES;
-    textField.layer.borderColor = [UIColor grayColor].CGColor;
-    textField.layer.borderWidth = 1.0f;
-    textField.textAlignment = NSTextAlignmentCenter;
+- (void)_setupElement:(UIView *)view {
+    view.layer.cornerRadius = 5.0f;
+    view.layer.masksToBounds = YES;
+    view.layer.borderColor = [UIColor grayColor].CGColor;
+    view.layer.borderWidth = 1.0f;
 }
 
 #pragma mark - Button Taps
