@@ -7,8 +7,8 @@
 //
 
 #import "KHLoginView.h"
-#import "Masonry.h"
-#import "DDLog.h"
+#import <Masonry/Masonry.h>
+#import <DDLog.h>
 #import "UIColor+KHHexString.h"
 #import "UIImage+KHAdditions.h"
 
@@ -20,8 +20,6 @@
 @property (nonatomic, strong) UIButton *signUpButton;
 
 @end
-
-static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 static CGFloat KHkButtonHeight = 44.0f;
 

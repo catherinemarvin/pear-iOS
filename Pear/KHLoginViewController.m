@@ -8,8 +8,9 @@
 
 #import "KHLoginViewController.h"
 #import "KHLoginView.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
-@interface KHLoginViewController ()<UITextFieldDelegate>
+@interface KHLoginViewController ()<UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) KHLoginView *loginView;
@@ -88,6 +89,35 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([textField isEqual:self.loginView.usernameField]) {
         [self.loginView.passwordField becomeFirstResponder];
+        return NO;
+    } else {
+        [self _attemptLogin];
+        return YES;
+    }
+}
+
+- (void)_attemptLogin {
+    if ([self _validateFields]) {
+        
+    }
+}
+
+- (BOOL)_validateFields {
+    NSString *alertTitle = NSLocalizedString(@"Sorry", @"Alert title");
+    NSString *alertMessage;
+    if ([self.loginView.usernameField.text length] == 0) {
+        alertMessage = NSLocalizedString(@"Please enter a username.", nil);
+    } else if ([self.loginView.passwordField.text length] == 0) {
+        alertMessage = NSLocalizedString(@"Please enter a password.", nil);
+    }
+    
+    if (alertMessage) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle message:alertMessage preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
         return NO;
     } else {
         return YES;
