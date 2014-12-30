@@ -84,4 +84,13 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     self.activeField = nil;
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:self.loginView.usernameField]) {
+        [self.loginView.passwordField becomeFirstResponder];
+        return NO;
+    } else {
+        return YES;
+    }
+}
 @end
