@@ -10,6 +10,9 @@
 #import "KHLoginView.h"
 #import <MBProgressHUD.h>
 #import <AFNetworking.h>
+#import <CocoaLumberjack/DDLog.h>
+
+static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface KHLoginViewController ()<UITextFieldDelegate, UIAlertViewDelegate>
 
@@ -30,6 +33,8 @@
     KHLoginView *loginView = [[KHLoginView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(scroll.bounds), 400)];
     loginView.usernameField.delegate = self;
     loginView.passwordField.delegate = self;
+    [loginView.signInButton addTarget:self action:@selector(_attemptLogin) forControlEvents:UIControlEventTouchUpInside];
+    [loginView.signUpButton addTarget:self action:@selector(_signUpTapped:) forControlEvents:UIControlEventTouchUpInside];
     [loginView setCenter:scroll.center];
     
     [scroll addSubview:loginView];
@@ -97,9 +102,14 @@
     }
 }
 
+#pragma mark - Button Tap
+- (void)_signUpTapped:(id)sender {
+    DDLogInfo(@"Sign up tapped");
+}
+
+#pragma mark - Login
 - (void)_attemptLogin {
     if ([self _validateFields]) {
-        
     }
 }
 
