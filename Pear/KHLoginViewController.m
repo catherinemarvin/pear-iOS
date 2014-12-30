@@ -16,7 +16,7 @@
 @implementation KHLoginViewController
 
 - (void)loadView {
-    CGRect frame = [UIScreen mainScreen].applicationFrame;
+    CGRect frame = [UIScreen mainScreen].bounds;
     
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:frame];
     
