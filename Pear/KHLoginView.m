@@ -9,6 +9,8 @@
 #import "KHLoginView.h"
 #import "Masonry.h"
 #import "DDLog.h"
+#import "UIColor+KHHexString.h"
+#import "UIImage+KHAdditions.h"
 
 @interface KHLoginView()
 
@@ -27,6 +29,8 @@ static CGFloat KHkButtonHeight = 44.0f;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor colorWithHexString:@"3B7FB2"];
+        
         _usernameField = [[UITextField alloc] init];
         _usernameField.placeholder = NSLocalizedString(@"Username", nil);
         _usernameField.layer.cornerRadius = 2.0f;
@@ -47,11 +51,12 @@ static CGFloat KHkButtonHeight = 44.0f;
         [_signInButton setTitle:NSLocalizedString(@"Sign in", nil) forState:UIControlStateNormal];
         [_signInButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_signInButton addTarget:self action:@selector(_signInTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [_signInButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"79B4D5"]] forState:UIControlStateNormal];
         [self addSubview:_signInButton];
         
         _signUpButton = [[UIButton alloc] init];
         [_signUpButton setTitle:NSLocalizedString(@"Sign up", nil) forState:UIControlStateNormal];
-        [_signUpButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_signUpButton addTarget:self action:@selector(_signUpTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_signUpButton];
         

@@ -1,5 +1,5 @@
 //
-//  UIColor+KHHexString.h
+//  UIImage+KHAdditions.h
 //  Pear
 //
 //  Created by Kevin Hwang on 12/29/14.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (KHHexString)
+@interface UIImage (KHAdditions)
 
-+ (UIColor *)colorWithHexString: (NSString *) hexString;
++ (UIImage *)imageWithColor:(UIColor *)color;
 
 @end
