@@ -24,7 +24,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     KHLoginViewController *loginVC = [[KHLoginViewController alloc] init];
-    self.window.rootViewController = loginVC;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
 }
