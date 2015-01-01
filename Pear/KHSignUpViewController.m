@@ -25,7 +25,7 @@
     KHSignUpView *signupView = [[KHSignUpView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(scroll.bounds), 400)];
     signupView.usernameField.delegate = self;
     signupView.passwordField.delegate = self;
-    [signupView.signUpButton addTarget:self action:@selector(_signUpTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [signupView.signUpButton addTarget:self action:@selector(_attemptSignup) forControlEvents:UIControlEventTouchUpInside];
     [signupView setCenter:scroll.center];
     
     [scroll addSubview:signupView];
@@ -48,14 +48,53 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UITextFieldDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:self.signUpView.usernameField]) {
+        [self.signUpView.passwordField becomeFirstResponder];
+        return NO;
+    } else {
+        [self _attemptSignup];
+        return YES;
+    }
 }
-*/
+
+#pragma mark - Button Tap
+
+- (void)_signUpTapped:(id)sender {
+    
+}
+
+#pragma mark - Signup
+
+- (void)_attemptSignup {
+    if ([self _validateFields]) {
+        
+    }
+}
+
+- (BOOL)_validateFields {
+    NSString *alertTitle = NSLocalizedString(@"Sorry", @"Alert title");
+    NSString *alertMessage;
+    if ([self.signUpView.usernameField.text length] == 0) {
+        alertMessage = NSLocalizedString(@"Please enter a username.", nil);
+    } else if ([self.signUpView.passwordField.text length] == 0) {
+        alertMessage = NSLocalizedString(@"Please enter a password.", nil);
+    }
+    
+    if (alertMessage) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:alertTitle message:alertMessage preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
 
 @end
