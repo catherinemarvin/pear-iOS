@@ -63,6 +63,7 @@
 #pragma mark - Button Tap
 
 - (void)_signUpTapped:(id)sender {
+    [self _attemptSignup];
     
 }
 
