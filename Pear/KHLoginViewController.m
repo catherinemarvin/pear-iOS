@@ -20,8 +20,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) KHLoginView *loginView;
 
-@property (nonatomic, strong) UITextField *activeField;
-
 @end
 
 @implementation KHLoginViewController
@@ -84,14 +82,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 #pragma mark - UITextFieldDelegate
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.activeField = textField;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.activeField = nil;
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([textField isEqual:self.loginView.usernameField]) {
