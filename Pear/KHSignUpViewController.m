@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) KHSignUpView *signUpView;
+@property (nonatomic, assign) BOOL keyboardVisible;
 
 @end
 
@@ -48,6 +49,10 @@
 #pragma mark - Keyboard Notifications
 
 - (void)_keyboardWillShow:(NSNotification *)n {
+    if (self.keyboardVisible) {
+        return;
+    }
+    
     NSDictionary *userInfo = [n userInfo];
     
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
@@ -62,6 +67,7 @@
     
     self.signUpView.center = centerPoint;
     
+    self.keyboardVisible = YES;
 }
 
 - (void)_keyboardWillHide:(NSNotification *)n {
@@ -70,6 +76,8 @@
     self.scrollView.scrollIndicatorInsets = contentInsets;
     
     self.signUpView.center = self.view.center;
+    
+    self.keyboardVisible = NO;
 }
 #pragma mark - UITextFieldDelegate
 

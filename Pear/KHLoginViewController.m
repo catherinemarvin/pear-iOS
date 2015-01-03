@@ -13,12 +13,11 @@
 #import <CocoaLumberjack/DDLog.h>
 #import "KHSignUpViewController.h"
 
-static int ddLogLevel = LOG_LEVEL_VERBOSE;
-
 @interface KHLoginViewController ()<UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) KHLoginView *loginView;
+@property (nonatomic, assign) BOOL keyboardVisible;
 
 @end
 
@@ -57,6 +56,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 #pragma mark - Keyboard Notifications
 
 - (void)_keyboardWillShow:(NSNotification *)n {
+    if (self.keyboardVisible) {
+        return;
+    }
+    
     NSDictionary *userInfo = [n userInfo];
     
     CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
@@ -71,6 +74,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     
     self.loginView.center = centerPoint;
     
+    self.keyboardVisible = YES;
 }
 
 - (void)_keyboardWillHide:(NSNotification *)n {
@@ -79,6 +83,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     
     self.loginView.center = self.view.center;
+    self.keyboardVisible = NO;
 }
 
 #pragma mark - UITextFieldDelegate
