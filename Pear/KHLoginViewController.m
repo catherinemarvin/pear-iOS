@@ -12,6 +12,7 @@
 #import <AFNetworking.h>
 #import <CocoaLumberjack/DDLog.h>
 #import "KHSignUpViewController.h"
+#import "KHHouseChoresViewController.h"
 
 @interface KHLoginViewController ()<UITextFieldDelegate, UIAlertViewDelegate>
 
@@ -106,8 +107,10 @@
 
 #pragma mark - Login
 - (void)_attemptLogin {
-    if ([self _validateFields]) {
-    }
+    KHHouseChoresViewController *houseChores = [[KHHouseChoresViewController alloc] init];
+    [self.navigationController pushViewController:houseChores animated:YES];
+//    if ([self _validateFields]) {
+//    }
 }
 
 - (BOOL)_validateFields {

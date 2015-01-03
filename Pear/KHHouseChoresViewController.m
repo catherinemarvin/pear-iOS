@@ -32,6 +32,8 @@ static NSString *KHkHouseChoresCellIdentifier = @"houseChoresCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:KHkHouseChoresCellIdentifier];
 }
 
 #pragma mark - UITableViewDataSource
