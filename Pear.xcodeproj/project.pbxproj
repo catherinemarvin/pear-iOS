@@ -14,6 +14,7 @@
 		6E0126261A52432600FB1736 /* UIImage+KHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126251A52432600FB1736 /* UIImage+KHAdditions.m */; };
 		6E01262A1A528DD700FB1736 /* KHSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126291A528DD700FB1736 /* KHSignUpViewController.m */; };
 		6E0126311A528EC500FB1736 /* KHSignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126301A528EC500FB1736 /* KHSignUpView.m */; };
+		6E0126361A589A2D00FB1736 /* KHHouseChoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126351A589A2D00FB1736 /* KHHouseChoresViewController.m */; };
 		6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774A91A4A0FF6006C0B51 /* main.m */; };
 		6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */; };
 		6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B71A4A0FF6006C0B51 /* Images.xcassets */; };
@@ -49,6 +50,8 @@
 		6E0126291A528DD700FB1736 /* KHSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignUpViewController.m; sourceTree = "<group>"; };
 		6E01262F1A528EC500FB1736 /* KHSignUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHSignUpView.h; sourceTree = "<group>"; };
 		6E0126301A528EC500FB1736 /* KHSignUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHSignUpView.m; sourceTree = "<group>"; };
+		6E0126341A589A2D00FB1736 /* KHHouseChoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHHouseChoresViewController.h; sourceTree = "<group>"; };
+		6E0126351A589A2D00FB1736 /* KHHouseChoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHHouseChoresViewController.m; sourceTree = "<group>"; };
 		6E4774A41A4A0FF6006C0B51 /* Pear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4774A81A4A0FF6006C0B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4774A91A4A0FF6006C0B51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		6E0126151A4B5A1200FB1736 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6E0126321A589A0500FB1736 /* Chores */,
 				6E0126271A528DAC00FB1736 /* Register/Login */,
 			);
 			name = "View Controllers";
@@ -91,6 +95,7 @@
 		6E01261C1A4B622600FB1736 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6E0126331A589A1100FB1736 /* Chores */,
 				6E01262E1A528EAF00FB1736 /* Register/Login */,
 			);
 			name = Views;
@@ -127,6 +132,22 @@
 				6E0126301A528EC500FB1736 /* KHSignUpView.m */,
 			);
 			name = Register/Login;
+			sourceTree = "<group>";
+		};
+		6E0126321A589A0500FB1736 /* Chores */ = {
+			isa = PBXGroup;
+			children = (
+				6E0126341A589A2D00FB1736 /* KHHouseChoresViewController.h */,
+				6E0126351A589A2D00FB1736 /* KHHouseChoresViewController.m */,
+			);
+			name = Chores;
+			sourceTree = "<group>";
+		};
+		6E0126331A589A1100FB1736 /* Chores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Chores;
 			sourceTree = "<group>";
 		};
 		6E47749B1A4A0FF6006C0B51 = {
@@ -344,6 +365,7 @@
 			files = (
 				6E0126311A528EC500FB1736 /* KHSignUpView.m in Sources */,
 				6E01261B1A4B5C9900FB1736 /* KHAppDelegate.m in Sources */,
+				6E0126361A589A2D00FB1736 /* KHHouseChoresViewController.m in Sources */,
 				6E0126181A4B5A4400FB1736 /* KHLoginViewController.m in Sources */,
 				6E0126261A52432600FB1736 /* UIImage+KHAdditions.m in Sources */,
 				6E01262A1A528DD700FB1736 /* KHSignUpViewController.m in Sources */,
