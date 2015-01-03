@@ -110,7 +110,8 @@
 #pragma mark - Login
 - (void)_attemptLogin {
     KHHouseChoresViewController *houseChores = [[KHHouseChoresViewController alloc] init];
-    [self.navigationController pushViewController:houseChores animated:YES];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:houseChores];
+    [self presentViewController:nav animated:YES completion:nil];
 //    if ([self _validateFields]) {
 //    }
 }
