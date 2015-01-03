@@ -33,6 +33,8 @@ static NSString *KHkHouseChoresCellIdentifier = @"houseChoresCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = NSLocalizedString(@"House Chores", nil);
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:KHkHouseChoresCellIdentifier];
 }
 
