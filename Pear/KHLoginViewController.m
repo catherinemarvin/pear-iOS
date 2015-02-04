@@ -13,9 +13,13 @@
 #import <CocoaLumberjack/DDLog.h>
 #import "KHSignUpViewController.h"
 #import "KHHouseChoresViewController.h"
+#import "KHLoginDataManager.h"
+#import "KHLoginDataManagerDelegate.h"
 
-@interface KHLoginViewController ()<UITextFieldDelegate, UIAlertViewDelegate>
 
+@interface KHLoginViewController ()<UITextFieldDelegate, UIAlertViewDelegate, KHLoginDataManagerDelegate>
+
+@property (nonatomic, strong) KHLoginDataManager *dataManager;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) KHLoginView *loginView;
 @property (nonatomic, assign) BOOL keyboardVisible;
@@ -23,6 +27,13 @@
 @end
 
 @implementation KHLoginViewController
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _dataManager = [[KHLoginDataManager alloc] initWithDelegate:self];
+    }
+    return self;
+}
 
 - (void)loadView {
     CGRect frame = [UIScreen mainScreen].bounds;
@@ -39,7 +50,7 @@
     [scroll addSubview:loginView];
     
     scroll.contentSize = loginView.bounds.size;
-    scroll.alwaysBounceVertical = YES;
+    scroll.alwaysBounceVertical = NO;
     scroll.backgroundColor = loginView.backgroundColor;
     
     self.scrollView = scroll;
@@ -109,11 +120,11 @@
 
 #pragma mark - Login
 - (void)_attemptLogin {
-    KHHouseChoresViewController *houseChores = [[KHHouseChoresViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:houseChores];
-    [self presentViewController:nav animated:YES completion:nil];
-//    if ([self _validateFields]) {
-//    }
+    if ([self _validateFields]) {
+        NSString *username = self.loginView.usernameField.text;
+        NSString *password = self.loginView.passwordField.text;
+        [self.dataManager loginWithUsername:username password:password];
+    }
 }
 
 - (BOOL)_validateFields {
@@ -136,5 +147,17 @@
     } else {
         return YES;
     }
+}
+
+#pragma mark - KHLoginDataManagerDelegate
+
+- (void)loginSucceeded:(NSString *)key {
+    KHHouseChoresViewController *houseChores = [[KHHouseChoresViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:houseChores];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)loginFailed:(NSError *)error {
+    
 }
 @end

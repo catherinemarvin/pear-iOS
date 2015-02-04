@@ -21,6 +21,7 @@
 		6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B71A4A0FF6006C0B51 /* Images.xcassets */; };
 		6E4774BB1A4A0FF6006C0B51 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B91A4A0FF6006C0B51 /* LaunchScreen.xib */; };
 		6E4774C71A4A0FF6006C0B51 /* PearTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774C61A4A0FF6006C0B51 /* PearTests.m */; };
+		6E5B3F641A8216D20091A556 /* KHLoginDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B3F631A8216D20091A556 /* KHLoginDataManager.m */; };
 		FA86218CF970EBDEB3E15DB5 /* libPods-Pear.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A6C5F3E5496E410A11EA1F /* libPods-Pear.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,9 @@
 		6E4774C01A4A0FF6006C0B51 /* PearTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PearTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4774C51A4A0FF6006C0B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4774C61A4A0FF6006C0B51 /* PearTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PearTests.m; sourceTree = "<group>"; };
+		6E5B3F621A8216D20091A556 /* KHLoginDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLoginDataManager.h; sourceTree = "<group>"; };
+		6E5B3F631A8216D20091A556 /* KHLoginDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHLoginDataManager.m; sourceTree = "<group>"; };
+		6E5B3F651A82176F0091A556 /* KHLoginDataManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLoginDataManagerDelegate.h; sourceTree = "<group>"; };
 		9A72AA005E980D96D4DED400 /* Pods-Pear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pear/Pods-Pear.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +182,7 @@
 		6E4774A61A4A0FF6006C0B51 /* Pear */ = {
 			isa = PBXGroup;
 			children = (
+				6E5B3F601A82168E0091A556 /* Data Manager */,
 				6E0126201A523EC600FB1736 /* Categories */,
 				6E4774B71A4A0FF6006C0B51 /* Images.xcassets */,
 				6E0126191A4B5C9900FB1736 /* KHAppDelegate.h */,
@@ -215,6 +220,24 @@
 				6E4774C51A4A0FF6006C0B51 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E5B3F601A82168E0091A556 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6E5B3F611A8216C30091A556 /* Login */,
+			);
+			name = "Data Manager";
+			sourceTree = "<group>";
+		};
+		6E5B3F611A8216C30091A556 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6E5B3F621A8216D20091A556 /* KHLoginDataManager.h */,
+				6E5B3F631A8216D20091A556 /* KHLoginDataManager.m */,
+				6E5B3F651A82176F0091A556 /* KHLoginDataManagerDelegate.h */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		7608088087C55120025A036E /* Pods */ = {
@@ -368,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5B3F641A8216D20091A556 /* KHLoginDataManager.m in Sources */,
 				6E0126311A528EC500FB1736 /* KHSignUpView.m in Sources */,
 				6E01261B1A4B5C9900FB1736 /* KHAppDelegate.m in Sources */,
 				6E0126361A589A2D00FB1736 /* KHHouseChoresViewController.m in Sources */,
