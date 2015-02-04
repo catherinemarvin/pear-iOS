@@ -10,6 +10,7 @@ pod 'Masonry'
 pod 'MagicalRecord'
 pod 'CocoaLumberjack'
 pod 'MBProgressHUD'
+pod 'Mantle'
 
 end
 
