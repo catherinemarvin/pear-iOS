@@ -7,6 +7,7 @@
 //
 
 #import "KHLoginDataManager.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface KHLoginDataManager()
 
@@ -24,7 +25,17 @@
 }
 
 - (void)loginWithUsername:(NSString *)username password:(NSString *)password {
-    [self.delegate loginSucceeded:@"fakeKey"];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setValue:username forKey:@"username"];
+    [params setValue:password forKey:@"password"];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager POST:@"http://pear-soap.herokuapp.com/api/v1.0/login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Response: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 @end
