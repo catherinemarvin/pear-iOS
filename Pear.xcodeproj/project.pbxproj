@@ -23,6 +23,7 @@
 		6E4774C71A4A0FF6006C0B51 /* PearTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774C61A4A0FF6006C0B51 /* PearTests.m */; };
 		6E5B3F641A8216D20091A556 /* KHLoginDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B3F631A8216D20091A556 /* KHLoginDataManager.m */; };
 		6E5B3F731A85BD520091A556 /* KHAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B3F721A85BD520091A556 /* KHAPIManager.m */; };
+		6E7D17041A88364E000502BE /* KHJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D17031A88364E000502BE /* KHJSONResponseSerializer.m */; };
 		FA86218CF970EBDEB3E15DB5 /* libPods-Pear.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A6C5F3E5496E410A11EA1F /* libPods-Pear.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		6E5B3F651A82176F0091A556 /* KHLoginDataManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHLoginDataManagerDelegate.h; sourceTree = "<group>"; };
 		6E5B3F711A85BD520091A556 /* KHAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHAPIManager.h; sourceTree = "<group>"; };
 		6E5B3F721A85BD520091A556 /* KHAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHAPIManager.m; sourceTree = "<group>"; };
+		6E7D17021A88364E000502BE /* KHJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHJSONResponseSerializer.h; sourceTree = "<group>"; };
+		6E7D17031A88364E000502BE /* KHJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHJSONResponseSerializer.m; sourceTree = "<group>"; };
 		9A72AA005E980D96D4DED400 /* Pods-Pear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pear/Pods-Pear.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +252,8 @@
 			children = (
 				6E5B3F711A85BD520091A556 /* KHAPIManager.h */,
 				6E5B3F721A85BD520091A556 /* KHAPIManager.m */,
+				6E7D17021A88364E000502BE /* KHJSONResponseSerializer.h */,
+				6E7D17031A88364E000502BE /* KHJSONResponseSerializer.m */,
 			);
 			name = "Base API";
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7D17041A88364E000502BE /* KHJSONResponseSerializer.m in Sources */,
 				6E5B3F641A8216D20091A556 /* KHLoginDataManager.m in Sources */,
 				6E0126311A528EC500FB1736 /* KHSignUpView.m in Sources */,
 				6E01261B1A4B5C9900FB1736 /* KHAppDelegate.m in Sources */,
