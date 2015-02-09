@@ -35,23 +35,29 @@ static NSString *KHkPearSoapBaseUrl = @"http://pear-soap.herokuapp.com/api/v1.0/
 - (void)get:(NSString *)url
  parameters:(NSDictionary *)parameters
     success:(void (^)(id responseObject))success
-    failure:(void (^)(NSError *error))failure {
+    failure:(void (^)(NSDictionary *errorDictionary, NSError *error))failure {
     [self.manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(responseObject);
     } failure:
     ^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure(error);
+        NSError *jsonError;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:0 error:&jsonError];
+        
+        failure(json, error);
     }];
 }
 
 - (void)post:(NSString *)url
   parameters:(NSDictionary *)parameters
      success:(void (^)(id responseObject))success
-     failure:(void (^)(NSError *error))failure {
+     failure:(void (^)(NSDictionary *errorDictionary, NSError *error))failure {
     [self.manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure(error);
+        NSError *jsonError;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:operation.responseData options:0 error:&jsonError];
+        
+        failure(json, error);
     }];
 }
 

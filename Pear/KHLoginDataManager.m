@@ -36,8 +36,8 @@ static NSString *const KHkPasswordKey = @"password";
     
     [self.manager get:@"login" parameters:params success:^(id responseObject) {
         NSLog(@"%@", responseObject);
-    } failure:^(NSError *error) {
-        NSLog(@"%@", error);
+    } failure:^(NSDictionary *errorDictionary, NSError *error) {
+        NSLog(@"%@", errorDictionary);
     }];
     
 }
