@@ -8,16 +8,26 @@
 
 #import "KHSignUpViewController.h"
 #import "KHSignUpView.h"
+#import "KHRegisterDataManager.h"
+#import "KHRegisterDataManagerDelegate.h"
 
-@interface KHSignUpViewController ()<UITextFieldDelegate>
+@interface KHSignUpViewController ()<UITextFieldDelegate, KHRegisterDataManagerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) KHSignUpView *signUpView;
 @property (nonatomic, assign) BOOL keyboardVisible;
+@property (nonatomic, strong) KHRegisterDataManager *dataManager;
 
 @end
 
 @implementation KHSignUpViewController
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _dataManager = [[KHRegisterDataManager alloc] initWithDelegate:self];
+    }
+    return self;
+}
 
 - (void)loadView {
     CGRect frame = [UIScreen mainScreen].bounds;
@@ -104,7 +114,10 @@
 
 - (void)_attemptSignup {
     if ([self _validateFields]) {
+        NSString *username = self.signUpView.usernameField.text;
+        NSString *password = self.signUpView.passwordField.text;
         
+        [self.dataManager registerWithUsername:username password:password];
     }
 }
 
@@ -128,6 +141,16 @@
     } else {
         return YES;
     }
+}
+
+#pragma mark - KHRegisterDataManagerDelegate
+
+- (void)registerSucceeded:(NSString *)key {
+    
+}
+
+- (void)registerFailed:(NSError *)error {
+
 }
 
 
