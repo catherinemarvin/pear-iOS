@@ -8,7 +8,6 @@
 
 #import "KHAPIManager.h"
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
-#import "KHJSONResponseSerializer.h"
 
 @interface KHAPIManager ()
 
@@ -27,7 +26,7 @@ static NSString *KHkPearSoapBaseUrl = @"http://pear-soap.herokuapp.com/api/v1.0/
         
         NSURL *baseUrl = [NSURL URLWithString:KHkPearSoapBaseUrl];
         _manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseUrl];
-        _manager.responseSerializer = [KHJSONResponseSerializer serializer];
+        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
     return self;
 }
