@@ -10,4 +10,6 @@
 
 @protocol KHFeatureIntroductionProtocol <NSObject>
 
+@property (nonatomic, assign) NSUInteger pageIndex;
+
 @end
