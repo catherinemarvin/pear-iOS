@@ -26,6 +26,7 @@
 		6E7D17081A886073000502BE /* KHRegisterDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D17071A886073000502BE /* KHRegisterDataManager.m */; };
 		6E7D17301A89B290000502BE /* KHFeatureIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D172F1A89B290000502BE /* KHFeatureIntroViewController.m */; };
 		6E7D17331A89B4EA000502BE /* KHFeatureIntroContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D17321A89B4EA000502BE /* KHFeatureIntroContentViewController.m */; };
+		6E7D17381A89BA09000502BE /* KHFeatureIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D17371A89BA09000502BE /* KHFeatureIntroView.m */; };
 		FA86218CF970EBDEB3E15DB5 /* libPods-Pear.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A6C5F3E5496E410A11EA1F /* libPods-Pear.a */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,9 @@
 		6E7D172F1A89B290000502BE /* KHFeatureIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFeatureIntroViewController.m; sourceTree = "<group>"; };
 		6E7D17311A89B4EA000502BE /* KHFeatureIntroContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFeatureIntroContentViewController.h; sourceTree = "<group>"; };
 		6E7D17321A89B4EA000502BE /* KHFeatureIntroContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFeatureIntroContentViewController.m; sourceTree = "<group>"; };
+		6E7D17341A89B696000502BE /* KHFeatureIntroductionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFeatureIntroductionProtocol.h; sourceTree = "<group>"; };
+		6E7D17361A89BA09000502BE /* KHFeatureIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFeatureIntroView.h; sourceTree = "<group>"; };
+		6E7D17371A89BA09000502BE /* KHFeatureIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFeatureIntroView.m; sourceTree = "<group>"; };
 		9A72AA005E980D96D4DED400 /* Pods-Pear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pear/Pods-Pear.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +120,7 @@
 		6E01261C1A4B622600FB1736 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6E7D17351A89B9F7000502BE /* Feature Introduction */,
 				6E0126331A589A1100FB1736 /* Chores */,
 				6E01262E1A528EAF00FB1736 /* Register/Login */,
 			);
@@ -282,6 +287,16 @@
 				6E7D172F1A89B290000502BE /* KHFeatureIntroViewController.m */,
 				6E7D17311A89B4EA000502BE /* KHFeatureIntroContentViewController.h */,
 				6E7D17321A89B4EA000502BE /* KHFeatureIntroContentViewController.m */,
+				6E7D17341A89B696000502BE /* KHFeatureIntroductionProtocol.h */,
+			);
+			name = "Feature Introduction";
+			sourceTree = "<group>";
+		};
+		6E7D17351A89B9F7000502BE /* Feature Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				6E7D17361A89BA09000502BE /* KHFeatureIntroView.h */,
+				6E7D17371A89BA09000502BE /* KHFeatureIntroView.m */,
 			);
 			name = "Feature Introduction";
 			sourceTree = "<group>";
@@ -446,6 +461,7 @@
 				6E0126391A59FDA800FB1736 /* KHChoreViewController.m in Sources */,
 				6E0126261A52432600FB1736 /* UIImage+KHAdditions.m in Sources */,
 				6E5B3F731A85BD520091A556 /* KHAPIManager.m in Sources */,
+				6E7D17381A89BA09000502BE /* KHFeatureIntroView.m in Sources */,
 				6E7D17301A89B290000502BE /* KHFeatureIntroViewController.m in Sources */,
 				6E01262A1A528DD700FB1736 /* KHSignUpViewController.m in Sources */,
 				6E01261F1A4B623B00FB1736 /* KHLoginView.m in Sources */,

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KHFeatureIntroductionProtocol.h"
 
-@interface KHFeatureIntroContentViewController : UIViewController
+@interface KHFeatureIntroContentViewController : UIViewController<KHFeatureIntroductionProtocol>
 
 @end
