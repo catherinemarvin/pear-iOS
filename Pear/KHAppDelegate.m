@@ -7,7 +7,8 @@
 //
 
 #import "KHAppDelegate.h"
-#import "KHLoginViewController.h"
+#import "KHFeatureIntroViewController.h"
+
 #import <CocoaLumberjack/DDLog.h>
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDTTYLogger.h>
@@ -23,9 +24,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    KHLoginViewController *loginVC = [[KHLoginViewController alloc] init];
+    KHFeatureIntroViewController *featureIntro = [[KHFeatureIntroViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:featureIntro];
     
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
