@@ -10,4 +10,6 @@
 
 @interface KHFeatureIntroView : UIView
 
+- (void)setPageNumber:(NSInteger)pageNumber;
+
 @end

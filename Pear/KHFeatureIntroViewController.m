@@ -36,7 +36,6 @@
     page1.pageIndex = 0;
     
     [self.featureIntroScreens addObject:page1];
-    
     [self setViewControllers:self.featureIntroScreens direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
@@ -74,7 +73,7 @@
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return 1;
+    return [self.featureIntroScreens count];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {

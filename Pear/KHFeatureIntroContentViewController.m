@@ -11,6 +11,8 @@
 
 @interface KHFeatureIntroContentViewController ()
 
+@property (nonatomic, strong) KHFeatureIntroView *view;
+
 @end
 
 
@@ -22,6 +24,14 @@
     KHFeatureIntroView *featureIntro = [[KHFeatureIntroView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.view = featureIntro;
 }
+
+- (void)setPageIndex:(NSUInteger)pageIndex {
+    _pageIndex = pageIndex;
+    
+    [self.view setPageNumber:pageIndex];
+}
+
+
 
 
 
