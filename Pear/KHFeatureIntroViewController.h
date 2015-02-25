@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KHFeatureIntroViewController : UIPageViewController
+@interface KHFeatureIntroViewController : UIViewController
 
 @end

@@ -33,7 +33,8 @@
 }
 
 - (void)setPageNumber:(NSInteger)pageNumber {
-    self.pageIndex.text = [NSString stringWithFormat:NSLocalizedString(@"Page %f", pageNumber)];
+    
+    self.pageIndex.text = [NSString stringWithFormat:NSLocalizedString(@"Page %d", nil), pageNumber];
 }
 
 @end

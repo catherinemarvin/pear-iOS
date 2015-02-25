@@ -7,10 +7,13 @@
 //
 
 #import "KHFeatureIntroViewController.h"
-#import "KHFeatureIntroductionProtocol.h"
 #import "KHFeatureIntroContentViewController.h"
 
-@interface KHFeatureIntroViewController ()<UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+#import <Masonry/Masonry.h>
+
+@interface KHFeatureIntroViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+
+@property (nonatomic, strong) UIPageViewController *pageController;
 
 @property (nonatomic, strong) NSMutableArray *featureIntroScreens;
 
@@ -18,26 +21,34 @@
 
 @implementation KHFeatureIntroViewController
 
-- (instancetype)initWithTransitionStyle:(UIPageViewControllerTransitionStyle)style navigationOrientation:(UIPageViewControllerNavigationOrientation)navigationOrientation options:(NSDictionary *)options {
-    if (self = [super initWithTransitionStyle:style navigationOrientation:navigationOrientation options:options]) {
-        self.delegate = self;
-        self.dataSource = self;
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.pageController.dataSource = self;
+    self.pageController.delegate = self;
     
     self.featureIntroScreens = [NSMutableArray array];
     
     KHFeatureIntroContentViewController *page1 = [[KHFeatureIntroContentViewController alloc] init];
     page1.pageIndex = 0;
     
+    KHFeatureIntroContentViewController *page2 = [[KHFeatureIntroContentViewController alloc] init];
+    page2.pageIndex = 1;
+    
     [self.featureIntroScreens addObject:page1];
-    [self setViewControllers:self.featureIntroScreens direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self.pageController setViewControllers:self.featureIntroScreens direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self.featureIntroScreens addObject:page2];
+    
+    
+    [self addChildViewController:self.pageController];
+    [self.view addSubview:self.pageController.view];
+    [self.pageController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
+    [self.pageController didMoveToParentViewController:self];
 }
+
 
 #pragma mark - UIPageViewControllerDataSource
 
@@ -79,6 +90,4 @@
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     return 0;
 }
-
-
 @end

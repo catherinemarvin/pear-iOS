@@ -25,7 +25,7 @@
     self.view = featureIntro;
 }
 
-- (void)setPageIndex:(NSUInteger)pageIndex {
+- (void)setPageIndex:(NSInteger)pageIndex {
     _pageIndex = pageIndex;
     
     [self.view setPageNumber:pageIndex];

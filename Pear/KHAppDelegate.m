@@ -24,8 +24,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    KHFeatureIntroViewController *featureIntro = [[KHFeatureIntroViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
+    KHFeatureIntroViewController *featureIntro = [[KHFeatureIntroViewController alloc] init];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:featureIntro];
     
