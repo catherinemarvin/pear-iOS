@@ -36,8 +36,11 @@
     page2.pageIndex = 1;
     
     [self.featureIntroScreens addObject:page1];
-    [self.pageController setViewControllers:self.featureIntroScreens direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     [self.featureIntroScreens addObject:page2];
+    
+    // Since we display one screen at a time, we pass in just the first screen, and the data source handles the rest.
+    NSArray *displayScreens = [NSArray arrayWithObject:[self.featureIntroScreens firstObject]];
+    [self.pageController setViewControllers:displayScreens direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     
     [self addChildViewController:self.pageController];
