@@ -110,7 +110,6 @@
 		6E0126151A4B5A1200FB1736 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6E7D172D1A89B275000502BE /* Feature Introduction */,
 				6E0126321A589A0500FB1736 /* Chores */,
 				6E0126271A528DAC00FB1736 /* Register/Login */,
 			);
@@ -120,7 +119,6 @@
 		6E01261C1A4B622600FB1736 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6E7D17351A89B9F7000502BE /* Feature Introduction */,
 				6E0126331A589A1100FB1736 /* Chores */,
 				6E01262E1A528EAF00FB1736 /* Register/Login */,
 			);
@@ -178,6 +176,36 @@
 			name = Chores;
 			sourceTree = "<group>";
 		};
+		6E2F97E91A9D9F52009E66B6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6E2F97EA1A9D9F5D009E66B6 /* Feature Introduction */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		6E2F97EA1A9D9F5D009E66B6 /* Feature Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				6E2F97EB1A9D9F68009E66B6 /* Views */,
+			);
+			name = "Feature Introduction";
+			sourceTree = "<group>";
+		};
+		6E2F97EB1A9D9F68009E66B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E7D17311A89B4EA000502BE /* KHFeatureIntroContentViewController.h */,
+				6E7D17321A89B4EA000502BE /* KHFeatureIntroContentViewController.m */,
+				6E7D17341A89B696000502BE /* KHFeatureIntroductionProtocol.h */,
+				6E7D17361A89BA09000502BE /* KHFeatureIntroView.h */,
+				6E7D17371A89BA09000502BE /* KHFeatureIntroView.m */,
+				6E7D172E1A89B290000502BE /* KHFeatureIntroViewController.h */,
+				6E7D172F1A89B290000502BE /* KHFeatureIntroViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		6E47749B1A4A0FF6006C0B51 = {
 			isa = PBXGroup;
 			children = (
@@ -201,12 +229,13 @@
 		6E4774A61A4A0FF6006C0B51 /* Pear */ = {
 			isa = PBXGroup;
 			children = (
-				6E5B3F601A82168E0091A556 /* Data Manager */,
 				6E0126201A523EC600FB1736 /* Categories */,
+				6E5B3F601A82168E0091A556 /* Data Manager */,
 				6E4774B71A4A0FF6006C0B51 /* Images.xcassets */,
 				6E0126191A4B5C9900FB1736 /* KHAppDelegate.h */,
 				6E01261A1A4B5C9900FB1736 /* KHAppDelegate.m */,
 				6E4774B91A4A0FF6006C0B51 /* LaunchScreen.xib */,
+				6E2F97E91A9D9F52009E66B6 /* Modules */,
 				6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */,
 				6E4774A71A4A0FF6006C0B51 /* Supporting Files */,
 				6E0126151A4B5A1200FB1736 /* View Controllers */,
@@ -278,27 +307,6 @@
 				6E7D17091A8860DA000502BE /* KHRegisterDataManagerDelegate.h */,
 			);
 			name = Register;
-			sourceTree = "<group>";
-		};
-		6E7D172D1A89B275000502BE /* Feature Introduction */ = {
-			isa = PBXGroup;
-			children = (
-				6E7D172E1A89B290000502BE /* KHFeatureIntroViewController.h */,
-				6E7D172F1A89B290000502BE /* KHFeatureIntroViewController.m */,
-				6E7D17311A89B4EA000502BE /* KHFeatureIntroContentViewController.h */,
-				6E7D17321A89B4EA000502BE /* KHFeatureIntroContentViewController.m */,
-				6E7D17341A89B696000502BE /* KHFeatureIntroductionProtocol.h */,
-			);
-			name = "Feature Introduction";
-			sourceTree = "<group>";
-		};
-		6E7D17351A89B9F7000502BE /* Feature Introduction */ = {
-			isa = PBXGroup;
-			children = (
-				6E7D17361A89BA09000502BE /* KHFeatureIntroView.h */,
-				6E7D17371A89BA09000502BE /* KHFeatureIntroView.m */,
-			);
-			name = "Feature Introduction";
 			sourceTree = "<group>";
 		};
 		7608088087C55120025A036E /* Pods */ = {
