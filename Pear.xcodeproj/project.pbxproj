@@ -16,6 +16,8 @@
 		6E0126311A528EC500FB1736 /* KHSignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126301A528EC500FB1736 /* KHSignUpView.m */; };
 		6E0126361A589A2D00FB1736 /* KHHouseChoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126351A589A2D00FB1736 /* KHHouseChoresViewController.m */; };
 		6E0126391A59FDA800FB1736 /* KHChoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126381A59FDA800FB1736 /* KHChoreViewController.m */; };
+		6E2F97F31A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F97F21A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m */; };
+		6E2F97F71A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F97F61A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m */; };
 		6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774A91A4A0FF6006C0B51 /* main.m */; };
 		6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */; };
 		6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B71A4A0FF6006C0B51 /* Images.xcassets */; };
@@ -61,6 +63,10 @@
 		6E0126351A589A2D00FB1736 /* KHHouseChoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHHouseChoresViewController.m; sourceTree = "<group>"; };
 		6E0126371A59FDA800FB1736 /* KHChoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHChoreViewController.h; sourceTree = "<group>"; };
 		6E0126381A59FDA800FB1736 /* KHChoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHChoreViewController.m; sourceTree = "<group>"; };
+		6E2F97F11A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFeatureIntroductionDataSource.h; sourceTree = "<group>"; };
+		6E2F97F21A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFeatureIntroductionDataSource.m; sourceTree = "<group>"; };
+		6E2F97F51A9EDBC2009E66B6 /* KHFeatureIntroductionContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFeatureIntroductionContent.h; sourceTree = "<group>"; };
+		6E2F97F61A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFeatureIntroductionContent.m; sourceTree = "<group>"; };
 		6E4774A41A4A0FF6006C0B51 /* Pear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4774A81A4A0FF6006C0B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4774A91A4A0FF6006C0B51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -187,6 +193,9 @@
 		6E2F97EA1A9D9F5D009E66B6 /* Feature Introduction */ = {
 			isa = PBXGroup;
 			children = (
+				6E2F97F41A9EDA43009E66B6 /* Images */,
+				6E2F97F01A9ED9E2009E66B6 /* Data Manager */,
+				6E2F97EF1A9ED9CF009E66B6 /* ViewModel */,
 				6E2F97EB1A9D9F68009E66B6 /* Views */,
 			);
 			name = "Feature Introduction";
@@ -204,6 +213,31 @@
 				6E7D172F1A89B290000502BE /* KHFeatureIntroViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		6E2F97EF1A9ED9CF009E66B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		6E2F97F01A9ED9E2009E66B6 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6E2F97F11A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.h */,
+				6E2F97F21A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m */,
+				6E2F97F51A9EDBC2009E66B6 /* KHFeatureIntroductionContent.h */,
+				6E2F97F61A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m */,
+			);
+			name = "Data Manager";
+			sourceTree = "<group>";
+		};
+		6E2F97F41A9EDA43009E66B6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		6E47749B1A4A0FF6006C0B51 = {
@@ -465,6 +499,7 @@
 				6E01261B1A4B5C9900FB1736 /* KHAppDelegate.m in Sources */,
 				6E0126361A589A2D00FB1736 /* KHHouseChoresViewController.m in Sources */,
 				6E0126181A4B5A4400FB1736 /* KHLoginViewController.m in Sources */,
+				6E2F97F71A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m in Sources */,
 				6E7D17331A89B4EA000502BE /* KHFeatureIntroContentViewController.m in Sources */,
 				6E0126391A59FDA800FB1736 /* KHChoreViewController.m in Sources */,
 				6E0126261A52432600FB1736 /* UIImage+KHAdditions.m in Sources */,
@@ -474,6 +509,7 @@
 				6E01262A1A528DD700FB1736 /* KHSignUpViewController.m in Sources */,
 				6E01261F1A4B623B00FB1736 /* KHLoginView.m in Sources */,
 				6E0126231A523F3E00FB1736 /* UIColor+KHHexString.m in Sources */,
+				6E2F97F31A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m in Sources */,
 				6E7D17081A886073000502BE /* KHRegisterDataManager.m in Sources */,
 				6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */,
 				6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */,
