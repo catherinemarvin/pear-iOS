@@ -25,10 +25,18 @@
     self.view = featureIntro;
 }
 
-- (void)setPageIndex:(NSInteger)pageIndex {
-    _pageIndex = pageIndex;
-    
-    [self.view setPageNumber:pageIndex];
+#pragma mark - KHFeatureIntroductionProtocol
+
+- (void)setHeaderText:(NSString *)headerText {
+    [self.view setHeaderText:headerText];
+}
+
+- (void)setDescriptionText:(NSString *)descriptionText {
+    [self.view setDescriptionText:descriptionText];
+}
+
+- (void)setBackgroundImage:(NSString *)imageString {
+    [self.view setBackgroundImage:imageString];
 }
 
 

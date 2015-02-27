@@ -10,6 +10,8 @@
 
 @interface KHFeatureIntroView : UIView
 
-- (void)setPageNumber:(NSInteger)pageNumber;
+- (void)setHeaderText:(NSString *)headerText;
+- (void)setDescriptionText:(NSString *)descriptionText;
+- (void)setBackgroundImage:(NSString *)backgroundImage;
 
 @end

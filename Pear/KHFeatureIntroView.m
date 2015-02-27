@@ -32,9 +32,16 @@
     }];
 }
 
-- (void)setPageNumber:(NSInteger)pageNumber {
+- (void)setHeaderText:(NSString *)headerText {
     
-    self.pageIndex.text = [NSString stringWithFormat:NSLocalizedString(@"Page %d", nil), pageNumber];
+}
+
+- (void)setDescriptionText:(NSString *)descriptionText {
+    
+}
+
+- (void)setBackgroundImage:(NSString *)backgroundImage {
+    
 }
 
 @end

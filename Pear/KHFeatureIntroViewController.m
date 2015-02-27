@@ -92,6 +92,9 @@
     if (index < [self.dataSource count]) {
         KHFeatureIntroContentViewController *vc = [[KHFeatureIntroContentViewController alloc] init];
         vc.pageIndex = index;
+        [vc setHeaderText:[self.dataSource headerTextForIndex:index]];
+        [vc setDescriptionText:[self.dataSource descriptionTextForIndex:index]];
+        [vc setBackgroundImage:[self.dataSource imageNameForIndex:index]];
         return vc;
     }
     return nil;

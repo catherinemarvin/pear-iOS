@@ -12,4 +12,8 @@
 
 @property (nonatomic, assign) NSInteger pageIndex;
 
+- (void)setBackgroundImage:(NSString *)imageString;
+- (void)setHeaderText:(NSString *)headerText;
+- (void)setDescriptionText:(NSString *)descriptionText;
+
 @end
