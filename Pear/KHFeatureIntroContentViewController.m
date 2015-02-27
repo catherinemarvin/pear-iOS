@@ -36,7 +36,7 @@
 }
 
 - (void)setBackgroundImage:(NSString *)imageString {
-    [self.view setBackgroundImage:imageString];
+    [self.view setBackgroundImageFromString:imageString];
 }
 
 

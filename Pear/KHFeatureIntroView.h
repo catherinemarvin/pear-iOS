@@ -12,6 +12,6 @@
 
 - (void)setHeaderText:(NSString *)headerText;
 - (void)setDescriptionText:(NSString *)descriptionText;
-- (void)setBackgroundImage:(NSString *)backgroundImage;
+- (void)setBackgroundImageFromString:(NSString *)backgroundImageText;
 
 @end
