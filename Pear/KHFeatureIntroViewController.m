@@ -8,6 +8,7 @@
 
 #import "KHFeatureIntroViewController.h"
 #import "KHFeatureIntroContentViewController.h"
+
 #import "KHFeatureIntroductionDataSource.h"
 
 #import <Masonry/Masonry.h>
@@ -34,6 +35,8 @@
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageController.dataSource = self;
     self.pageController.delegate = self;
+    
+    [self.pageController setViewControllers:[self _initialPageControllerVCs] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     [self addChildViewController:self.pageController];
     [self.view addSubview:self.pageController.view];
@@ -70,6 +73,21 @@
     }
 }
 
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+    return [self.dataSource count];
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+    return 0;
+}
+
+#pragma mark - Helpers
+
+- (NSArray *)_initialPageControllerVCs {
+    UIViewController *vc = [self _viewControllerAtIndex:0];
+    return [NSArray arrayWithObject:vc];
+}
+
 - (UIViewController *)_viewControllerAtIndex:(NSUInteger)index {
     if (index < [self.dataSource count]) {
         KHFeatureIntroContentViewController *vc = [[KHFeatureIntroContentViewController alloc] init];
@@ -79,11 +97,4 @@
     return nil;
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return [self.dataSource count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return 0;
-}
 @end
