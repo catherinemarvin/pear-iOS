@@ -40,6 +40,10 @@
     return content.descriptionText;
 }
 
+- (NSUInteger)count {
+    return [self.featureScreens count];
+}
+
 - (void)_setupFeatureScreens {
     KHFeatureIntroductionContent *page1 = [[KHFeatureIntroductionContent alloc]
                                            initWithHeaderText:NSLocalizedString(@"Welcome 1", nil)
@@ -52,6 +56,10 @@
                                            descriptionText:NSLocalizedString(@"Description 2", nil)
                                            imagePath:@"feature_intro_background_2"];
     [self.featureScreens addObject:page2];
+}
+
+- (NSArray *)initialIntroScreen {
+    return [NSArray arrayWithObject:self.featureScreens[0]];
 }
 
 @end

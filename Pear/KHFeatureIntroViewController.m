@@ -8,40 +8,32 @@
 
 #import "KHFeatureIntroViewController.h"
 #import "KHFeatureIntroContentViewController.h"
+#import "KHFeatureIntroductionDataSource.h"
 
 #import <Masonry/Masonry.h>
 
 @interface KHFeatureIntroViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
 @property (nonatomic, strong) UIPageViewController *pageController;
+@property (nonatomic, strong) KHFeatureIntroductionDataSource *dataSource;
 
-@property (nonatomic, strong) NSMutableArray *featureIntroScreens;
 
 @end
 
 @implementation KHFeatureIntroViewController
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _dataSource = [[KHFeatureIntroductionDataSource alloc] init];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageController.dataSource = self;
     self.pageController.delegate = self;
-    
-    self.featureIntroScreens = [NSMutableArray array];
-    
-    KHFeatureIntroContentViewController *page1 = [[KHFeatureIntroContentViewController alloc] init];
-    page1.pageIndex = 0;
-    
-    KHFeatureIntroContentViewController *page2 = [[KHFeatureIntroContentViewController alloc] init];
-    page2.pageIndex = 1;
-    
-    [self.featureIntroScreens addObject:page1];
-    [self.featureIntroScreens addObject:page2];
-    
-    // Since we display one screen at a time, we pass in just the first screen, and the data source handles the rest.
-    NSArray *displayScreens = [NSArray arrayWithObject:[self.featureIntroScreens firstObject]];
-    [self.pageController setViewControllers:displayScreens direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    
     
     [self addChildViewController:self.pageController];
     [self.view addSubview:self.pageController.view];
@@ -79,15 +71,16 @@
 }
 
 - (UIViewController *)_viewControllerAtIndex:(NSUInteger)index {
-    if (index < [self.featureIntroScreens count]) {
-        return [self.featureIntroScreens objectAtIndex:index];
-    } else {
-        return nil;
+    if (index < [self.dataSource count]) {
+        KHFeatureIntroContentViewController *vc = [[KHFeatureIntroContentViewController alloc] init];
+        vc.pageIndex = index;
+        return vc;
     }
+    return nil;
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return [self.featureIntroScreens count];
+    return [self.dataSource count];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {

@@ -13,5 +13,6 @@
 - (NSString *)imageNameForIndex:(NSUInteger)index;
 - (NSString *)headerTextForIndex:(NSUInteger)index;
 - (NSString *)descriptionTextForIndex:(NSUInteger)index;
+- (NSUInteger)count;
 
 @end
