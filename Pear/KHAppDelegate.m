@@ -25,10 +25,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     KHFeatureIntroViewController *featureIntro = [[KHFeatureIntroViewController alloc] init];
+    self.window.rootViewController = featureIntro;
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:featureIntro];
-    
-    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
 }
