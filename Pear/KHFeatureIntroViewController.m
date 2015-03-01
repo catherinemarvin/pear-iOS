@@ -27,7 +27,6 @@
     if (self = [super init]) {
         _dataSource = [[KHFeatureIntroductionDataSource alloc] init];
         _scrollView = [[UIScrollView alloc] init];
-        _scrollView.pagingEnabled = YES;
         _pageControl = [[UIPageControl alloc] init];
     }
     return self;
@@ -44,7 +43,7 @@
     self.scrollView.frame = self.view.bounds;
     CGSize pageScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * [self.dataSource count], pageScrollViewSize.height);
-    
+    self.scrollView.pagingEnabled = YES;
 }
 
 - (void)_setupPageControl {
