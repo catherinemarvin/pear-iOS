@@ -69,6 +69,11 @@
     }
 }
 
+#pragma mark - Appearance
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 #pragma mark - Helpers
 
 - (UIViewController *)_viewControllerAtIndex:(NSUInteger)index {
