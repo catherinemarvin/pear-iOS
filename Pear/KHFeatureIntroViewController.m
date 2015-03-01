@@ -36,6 +36,7 @@
     [super viewDidLoad];
     [self _setupScrollView];
     [self _setupPageControl];
+    [self _setupIntroScreens];
 }
 
 - (void)_setupScrollView {
@@ -54,12 +55,21 @@
     self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
 }
 
-#pragma mark - Helpers
-
-- (NSArray *)_initialPageControllerVCs {
-    UIViewController *vc = [self _viewControllerAtIndex:0];
-    return [NSArray arrayWithObject:vc];
+- (void)_setupIntroScreens {
+    for (int i = 0; i < [self.dataSource count]; i++) {
+        UIViewController *vc = [self _viewControllerAtIndex:i];
+        [self addChildViewController:vc];
+        CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
+        CGFloat pageHeight = CGRectGetHeight(self.scrollView.frame);
+        CGFloat xOffset = pageWidth * i;
+        CGRect frame = CGRectMake(xOffset, 0, pageWidth, pageHeight);
+        vc.view.frame = frame;
+        [self.view addSubview:vc.view];
+        [vc didMoveToParentViewController:self];
+    }
 }
+
+#pragma mark - Helpers
 
 - (UIViewController *)_viewControllerAtIndex:(NSUInteger)index {
     if (index < [self.dataSource count]) {
