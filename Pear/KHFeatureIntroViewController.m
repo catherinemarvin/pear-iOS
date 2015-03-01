@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) KHFeatureIntroductionDataSource *dataSource;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIPageControl *pageControl;
 
 @end
 
@@ -26,6 +27,7 @@
     if (self = [super init]) {
         _dataSource = [[KHFeatureIntroductionDataSource alloc] init];
         _scrollView = [[UIScrollView alloc] init];
+        _pageControl = [[UIPageControl alloc] init];
     }
     return self;
 }
