@@ -41,9 +41,7 @@
 
 - (void)_setupScrollView {
     [self.view addSubview:self.scrollView];
-    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+    self.scrollView.frame = self.view.bounds;
     CGSize pageScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * [self.dataSource count], pageScrollViewSize.height);
     
