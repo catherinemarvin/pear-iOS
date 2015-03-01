@@ -13,11 +13,10 @@
 
 #import <Masonry/Masonry.h>
 
-@interface KHFeatureIntroViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@interface KHFeatureIntroViewController ()
 
-@property (nonatomic, strong) UIPageViewController *pageController;
 @property (nonatomic, strong) KHFeatureIntroductionDataSource *dataSource;
-
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
@@ -26,55 +25,17 @@
 - (instancetype)init {
     if (self = [super init]) {
         _dataSource = [[KHFeatureIntroductionDataSource alloc] init];
+        _scrollView = [[UIScrollView alloc] init];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    self.pageController.dataSource = self;
-    self.pageController.delegate = self;
-    
-    [self.pageController setViewControllers:[self _initialPageControllerVCs] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    
-    [self addChildViewController:self.pageController];
-    [self.view addSubview:self.pageController.view];
-    [self.pageController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:self.scrollView];
+    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    
-    [self.pageController didMoveToParentViewController:self];
-    
-    UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-}
-
-
-#pragma mark - UIPageViewControllerDataSource
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    if ([viewController conformsToProtocol:@protocol(KHFeatureIntroductionProtocol)]) {
-        UIViewController<KHFeatureIntroductionProtocol> *vc = (UIViewController<KHFeatureIntroductionProtocol> *)viewController;
-        NSUInteger index = [vc pageIndex];
-        index--;
-        return [self _viewControllerAtIndex:index];
-    } else {
-        return nil;
-    }
-}
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    
-    if ([viewController conformsToProtocol:@protocol(KHFeatureIntroductionProtocol)]) {
-        UIViewController<KHFeatureIntroductionProtocol> *vc = (UIViewController<KHFeatureIntroductionProtocol> *)viewController;
-        NSUInteger index = [vc pageIndex];
-        index++;
-        return [self _viewControllerAtIndex:index];
-    } else {
-        return nil;
-    }
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
