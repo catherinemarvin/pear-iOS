@@ -64,7 +64,7 @@
         CGFloat xOffset = pageWidth * i;
         CGRect frame = CGRectMake(xOffset, 0, pageWidth, pageHeight);
         vc.view.frame = frame;
-        [self.view addSubview:vc.view];
+        [self.scrollView addSubview:vc.view];
         [vc didMoveToParentViewController:self];
     }
 }
