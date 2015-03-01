@@ -27,6 +27,7 @@
     if (self = [super init]) {
         _dataSource = [[KHFeatureIntroductionDataSource alloc] init];
         _scrollView = [[UIScrollView alloc] init];
+        _scrollView.pagingEnabled = YES;
         _pageControl = [[UIPageControl alloc] init];
     }
     return self;
@@ -34,18 +35,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _setupScrollView];
+    [self _setupPageControl];
+}
+
+- (void)_setupScrollView {
     [self.view addSubview:self.scrollView];
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    CGSize pageScrollViewSize = self.scrollView.frame.size;
+    self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * [self.dataSource count], pageScrollViewSize.height);
+    
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return [self.dataSource count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return 0;
+- (void)_setupPageControl {
+    [self.view addSubview:self.pageControl];
+    self.pageControl.currentPage = 0;
+    self.pageControl.numberOfPages = [self.dataSource count];
+    self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
 }
 
 #pragma mark - Helpers
