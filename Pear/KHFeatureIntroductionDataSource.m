@@ -58,8 +58,4 @@
     [self.featureScreens addObject:page2];
 }
 
-- (NSArray *)initialIntroScreen {
-    return [NSArray arrayWithObject:self.featureScreens[0]];
-}
-
 @end
