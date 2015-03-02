@@ -78,6 +78,7 @@
 }
 
 - (void)_setupCallToAction {
+    CGFloat buttonHeight = 44.0f;
     [self.view addSubview:self.callToAction];
     self.callToAction.backgroundColor = [UIColor colorWithHexString:@"fed136"];
     [self.callToAction setTitle:[NSLocalizedString(@"Let's go!", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
@@ -85,7 +86,7 @@
     [self.callToAction mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.view);
         make.bottom.equalTo(self.view);
-        make.height.equalTo(@44);
+        make.height.mas_equalTo(buttonHeight);
     }];
 }
 
