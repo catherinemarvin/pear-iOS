@@ -53,19 +53,21 @@
 }
 
 - (void)_initializeAutolayout {
+    CGFloat sidePadding = 40.0f;
     [self.backgroundImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
     
     [self.headerTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self);
-        make.left.and.right.equalTo(self);
+        make.left.equalTo(self).with.offset(sidePadding);
+        make.right.equalTo(self).with.offset(-sidePadding);
     }];
     
     CGFloat padding = 20.0f;
     [self.descriptionTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.headerTextLabel.mas_bottom).with.offset(padding);
-        make.left.and.right.equalTo(self);
+        make.left.and.right.equalTo(self.headerTextLabel);
     }];
 }
 
