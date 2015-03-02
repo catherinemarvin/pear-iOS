@@ -18,7 +18,7 @@
 
 #import <Masonry/Masonry.h>
 
-@interface KHFeatureIntroViewController ()
+@interface KHFeatureIntroViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) KHFeatureIntroductionDataSource *dataSource;
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -54,6 +54,7 @@
     CGSize pageScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * [self.dataSource count], pageScrollViewSize.height);
     self.scrollView.pagingEnabled = YES;
+    self.scrollView.delegate = self;
 }
 
 - (void)_setupPageControl {
@@ -61,7 +62,7 @@
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = [self.dataSource count];
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
 }
 
 - (void)_setupIntroScreens {
@@ -117,6 +118,15 @@
         return vc;
     }
     return nil;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
+    float fractionalPage = self.scrollView.contentOffset.x / pageWidth;
+    NSInteger page =lround(fractionalPage);
+    self.pageControl.currentPage = page;
 }
 
 @end
