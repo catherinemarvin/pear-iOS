@@ -30,7 +30,7 @@
         
         _headerTextLabel = ({
             UILabel *label = [[UILabel alloc] init];
-            label.font = [UIFont regularWithSize:20];
+            label.font = [UIFont regularWithSize:24];
             label.textColor = [UIColor whiteColor];
             label.textAlignment = NSTextAlignmentCenter;
             
@@ -43,6 +43,7 @@
             label.font = [UIFont regularWithSize:14];
             label.textColor = [UIColor whiteColor];
             label.textAlignment = NSTextAlignmentCenter;
+            label.numberOfLines = 0;
             label;
         });
         [_backgroundImage addSubview:_descriptionTextLabel];
@@ -57,12 +58,13 @@
     }];
     
     [self.headerTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
+        make.centerY.equalTo(self);
         make.left.and.right.equalTo(self);
     }];
     
+    CGFloat padding = 20.0f;
     [self.descriptionTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.headerTextLabel.mas_bottom);
+        make.top.equalTo(self.headerTextLabel.mas_bottom).with.offset(padding);
         make.left.and.right.equalTo(self);
     }];
 }
