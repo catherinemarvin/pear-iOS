@@ -57,7 +57,9 @@
                                            imagePath:@"feature_intro_background_2"];
     [self.featureScreens addObject:page2];
     
-    KHFeatureIntroductionContent *page3 = [[KHFeatureIntroductionContent alloc] initWithHeaderText:NSLocalizedString(@"Balance Work", nil) descriptionText:NSLocalizedString(@"Tell us the chores and we'll make sure everybody pitches in.", nil) imagePath:@"feature_intro_background_3"];
+    KHFeatureIntroductionContent *page3 = [[KHFeatureIntroductionContent alloc]
+                                           initWithHeaderText:NSLocalizedString(@"Balance Work", nil)
+                                           descriptionText:NSLocalizedString(@"Tell us the chores and we'll make sure everybody pitches in.", nil) imagePath:@"feature_intro_background_3"];
     [self.featureScreens addObject:page3];
 }
 
