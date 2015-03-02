@@ -6,10 +6,15 @@
 //  Copyright (c) 2015 Kevin Hwang. All rights reserved.
 //
 
+// VCs
 #import "KHFeatureIntroViewController.h"
 #import "KHFeatureIntroContentViewController.h"
 
+// Data Source
 #import "KHFeatureIntroductionDataSource.h"
+
+// Helper
+#import "UIColor+KHHexString.h"
 
 #import <Masonry/Masonry.h>
 
@@ -18,6 +23,7 @@
 @property (nonatomic, strong) KHFeatureIntroductionDataSource *dataSource;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) UIButton *callToAction;
 
 @end
 
@@ -28,6 +34,7 @@
         _dataSource = [[KHFeatureIntroductionDataSource alloc] init];
         _scrollView = [[UIScrollView alloc] init];
         _pageControl = [[UIPageControl alloc] init];
+        _callToAction = [[UIButton alloc] init];
     }
     return self;
 }
@@ -37,6 +44,7 @@
     [self _setupScrollView];
     [self _setupPageControl];
     [self _setupIntroScreens];
+    [self _setupCallToAction];
 }
 
 - (void)_setupScrollView {
@@ -67,6 +75,18 @@
         [self.scrollView addSubview:vc.view];
         [vc didMoveToParentViewController:self];
     }
+}
+
+- (void)_setupCallToAction {
+    [self.view addSubview:self.callToAction];
+    self.callToAction.backgroundColor = [UIColor colorWithHexString:@"fed136"];
+    [self.callToAction setTitle:[NSLocalizedString(@"Let's go!", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
+    
+    [self.callToAction mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.view);
+        make.bottom.equalTo(self.view);
+        make.height.equalTo(@44);
+    }];
 }
 
 #pragma mark - Appearance
