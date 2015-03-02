@@ -46,16 +46,19 @@
 
 - (void)_setupFeatureScreens {
     KHFeatureIntroductionContent *page1 = [[KHFeatureIntroductionContent alloc]
-                                           initWithHeaderText:NSLocalizedString(@"Welcome 1", nil)
-                                           descriptionText:NSLocalizedString(@"Description 1", nil)
+                                           initWithHeaderText:NSLocalizedString(@"Welcome", nil)
+                                           descriptionText:NSLocalizedString(@"Put your whiteboard away and simplify your household management.", nil)
                                            imagePath:@"feature_intro_background_1"];
     [self.featureScreens addObject:page1];
     
     KHFeatureIntroductionContent *page2 = [[KHFeatureIntroductionContent alloc]
-                                           initWithHeaderText:NSLocalizedString(@"Welcome 2", nil)
-                                           descriptionText:NSLocalizedString(@"Description 2", nil)
+                                           initWithHeaderText:NSLocalizedString(@"Finances", nil)
+                                           descriptionText:NSLocalizedString(@"Just enter what you buy for the house and we'll crunch all the numbers for you.", nil)
                                            imagePath:@"feature_intro_background_2"];
     [self.featureScreens addObject:page2];
+    
+    KHFeatureIntroductionContent *page3 = [[KHFeatureIntroductionContent alloc] initWithHeaderText:NSLocalizedString(@"Balance Work", nil) descriptionText:NSLocalizedString(@"Tell us the chores and we'll make sure everybody pitches in.", nil) imagePath:@"feature_intro_background_3"];
+    [self.featureScreens addObject:page3];
 }
 
 @end
