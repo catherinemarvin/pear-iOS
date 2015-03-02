@@ -18,6 +18,7 @@
 		6E0126391A59FDA800FB1736 /* KHChoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0126381A59FDA800FB1736 /* KHChoreViewController.m */; };
 		6E2F97F31A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F97F21A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m */; };
 		6E2F97F71A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F97F61A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m */; };
+		6E2F98081AA43541009E66B6 /* UIFont+KHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F98071AA43541009E66B6 /* UIFont+KHAdditions.m */; };
 		6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774A91A4A0FF6006C0B51 /* main.m */; };
 		6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */; };
 		6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B71A4A0FF6006C0B51 /* Images.xcassets */; };
@@ -67,6 +68,8 @@
 		6E2F97F21A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFeatureIntroductionDataSource.m; sourceTree = "<group>"; };
 		6E2F97F51A9EDBC2009E66B6 /* KHFeatureIntroductionContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHFeatureIntroductionContent.h; sourceTree = "<group>"; };
 		6E2F97F61A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFeatureIntroductionContent.m; sourceTree = "<group>"; };
+		6E2F98061AA43541009E66B6 /* UIFont+KHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+KHAdditions.h"; sourceTree = "<group>"; };
+		6E2F98071AA43541009E66B6 /* UIFont+KHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+KHAdditions.m"; sourceTree = "<group>"; };
 		6E4774A41A4A0FF6006C0B51 /* Pear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4774A81A4A0FF6006C0B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4774A91A4A0FF6006C0B51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				6E0126221A523F3E00FB1736 /* UIColor+KHHexString.m */,
 				6E0126241A52432600FB1736 /* UIImage+KHAdditions.h */,
 				6E0126251A52432600FB1736 /* UIImage+KHAdditions.m */,
+				6E2F98061AA43541009E66B6 /* UIFont+KHAdditions.h */,
+				6E2F98071AA43541009E66B6 /* UIFont+KHAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E5B3F641A8216D20091A556 /* KHLoginDataManager.m in Sources */,
+				6E2F98081AA43541009E66B6 /* UIFont+KHAdditions.m in Sources */,
 				6E0126311A528EC500FB1736 /* KHSignUpView.m in Sources */,
 				6E01261B1A4B5C9900FB1736 /* KHAppDelegate.m in Sources */,
 				6E0126361A589A2D00FB1736 /* KHHouseChoresViewController.m in Sources */,
