@@ -7,6 +7,7 @@
 //
 
 #import "KHFeatureIntroView.h"
+#import "UIFont+KHAdditions.h"
 #import <Masonry/Masonry.h>
 
 @interface KHFeatureIntroView()
@@ -29,6 +30,8 @@
         
         _headerTextLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:20];
+            label.textColor = [UIColor whiteColor];
             
             label;
         });
@@ -36,6 +39,8 @@
         
         _descriptionTextLabel = ({
             UILabel *label = [[UILabel alloc] init];
+            label.font = [UIFont regularWithSize:14];
+            label.textColor = [UIColor whiteColor];
             label;
         });
         [_backgroundImage addSubview:_descriptionTextLabel];
