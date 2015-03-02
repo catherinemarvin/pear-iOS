@@ -45,6 +45,7 @@
     [self _setupPageControl];
     [self _setupIntroScreens];
     [self _setupCallToAction];
+    [self _setupAutolayout];
 }
 
 - (void)_setupScrollView {
@@ -78,11 +79,20 @@
 }
 
 - (void)_setupCallToAction {
-    CGFloat buttonHeight = 44.0f;
     [self.view addSubview:self.callToAction];
     self.callToAction.backgroundColor = [UIColor colorWithHexString:@"fed136"];
     [self.callToAction setTitle:[NSLocalizedString(@"Let's go!", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
     
+}
+
+- (void)_setupAutolayout {
+    CGFloat padding = 20.0f;
+    [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.callToAction.mas_top).with.offset(-padding);
+    }];
+    
+    CGFloat buttonHeight = 44.0f;
     [self.callToAction mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.view);
         make.bottom.equalTo(self.view);
