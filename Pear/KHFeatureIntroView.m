@@ -32,6 +32,7 @@
             UILabel *label = [[UILabel alloc] init];
             label.font = [UIFont regularWithSize:20];
             label.textColor = [UIColor whiteColor];
+            label.textAlignment = NSTextAlignmentCenter;
             
             label;
         });
@@ -41,6 +42,7 @@
             UILabel *label = [[UILabel alloc] init];
             label.font = [UIFont regularWithSize:14];
             label.textColor = [UIColor whiteColor];
+            label.textAlignment = NSTextAlignmentCenter;
             label;
         });
         [_backgroundImage addSubview:_descriptionTextLabel];
