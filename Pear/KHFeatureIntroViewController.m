@@ -16,7 +16,9 @@
 // Helper
 #import "UIColor+KHHexString.h"
 
+// Views
 #import <Masonry/Masonry.h>
+#import "UIFont+KHAdditions.h"
 
 @interface KHFeatureIntroViewController ()<UIScrollViewDelegate>
 
@@ -83,7 +85,7 @@
     [self.view addSubview:self.callToAction];
     self.callToAction.backgroundColor = [UIColor colorWithHexString:@"fed136"];
     [self.callToAction setTitle:[NSLocalizedString(@"Let's go!", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
-    
+    self.callToAction.titleLabel.font = [UIFont boldWithSize:14];
 }
 
 - (void)_setupAutolayout {
@@ -106,6 +108,7 @@
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
+
 #pragma mark - Helpers
 
 - (UIViewController *)_viewControllerAtIndex:(NSUInteger)index {
