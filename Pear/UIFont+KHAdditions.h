@@ -11,7 +11,7 @@
 @interface UIFont (KHAdditions)
 
 + (UIFont *)regularWithSize:(CGFloat)size;
-+ (UIFont *)serifWithSize:(CGFloat)size;
 + (UIFont *)boldWithSize:(CGFloat)size;
++ (UIFont *)italicWithSize:(CGFloat)size;
 
 @end

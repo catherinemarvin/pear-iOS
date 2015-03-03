@@ -8,9 +8,9 @@
 
 #import "UIFont+KHAdditions.h"
 
-static NSString *const KHkRegularFontName = @"Helvetica";
-static NSString *const KhkSerifFontName = @"Helvetica Neue";
-static NSString *const KHkBoldFontName = @"Helvetica";
+static NSString *const KHkRegularFontName = @"Lato-Regular";
+static NSString *const KHkBoldFontName = @"Lato-Bold";
+static NSString *const KHkItalicFontName = @"Lato-Italic";
 
 @implementation UIFont (KHAdditions)
 
@@ -18,12 +18,12 @@ static NSString *const KHkBoldFontName = @"Helvetica";
     return [UIFont fontWithName:KHkRegularFontName size:size];
 }
 
-+ (UIFont *)serifWithSize:(CGFloat)size {
-    return [UIFont fontWithName:KhkSerifFontName size:size];
-}
-
 + (UIFont *)boldWithSize:(CGFloat)size {
     return [UIFont fontWithName:KHkBoldFontName size:size];
+}
+
++ (UIFont *)italicWithSize:(CGFloat)size {
+    return [UIFont fontWithName:KHkItalicFontName size:size];
 }
 
 @end

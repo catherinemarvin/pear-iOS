@@ -19,6 +19,9 @@
 		6E2F97F31A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F97F21A9EDA07009E66B6 /* KHFeatureIntroductionDataSource.m */; };
 		6E2F97F71A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F97F61A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m */; };
 		6E2F98081AA43541009E66B6 /* UIFont+KHAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F98071AA43541009E66B6 /* UIFont+KHAdditions.m */; };
+		6E2F980D1AA56D0F009E66B6 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F980A1AA56D0F009E66B6 /* Lato-Bold.ttf */; };
+		6E2F980E1AA56D0F009E66B6 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F980B1AA56D0F009E66B6 /* Lato-Italic.ttf */; };
+		6E2F980F1AA56D0F009E66B6 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F980C1AA56D0F009E66B6 /* Lato-Regular.ttf */; };
 		6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774A91A4A0FF6006C0B51 /* main.m */; };
 		6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */; };
 		6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B71A4A0FF6006C0B51 /* Images.xcassets */; };
@@ -70,6 +73,9 @@
 		6E2F97F61A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHFeatureIntroductionContent.m; sourceTree = "<group>"; };
 		6E2F98061AA43541009E66B6 /* UIFont+KHAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+KHAdditions.h"; sourceTree = "<group>"; };
 		6E2F98071AA43541009E66B6 /* UIFont+KHAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+KHAdditions.m"; sourceTree = "<group>"; };
+		6E2F980A1AA56D0F009E66B6 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		6E2F980B1AA56D0F009E66B6 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		6E2F980C1AA56D0F009E66B6 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		6E4774A41A4A0FF6006C0B51 /* Pear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4774A81A4A0FF6006C0B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4774A91A4A0FF6006C0B51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -245,6 +251,16 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		6E2F98091AA56CD9009E66B6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6E2F980A1AA56D0F009E66B6 /* Lato-Bold.ttf */,
+				6E2F980B1AA56D0F009E66B6 /* Lato-Italic.ttf */,
+				6E2F980C1AA56D0F009E66B6 /* Lato-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		6E47749B1A4A0FF6006C0B51 = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +286,7 @@
 			children = (
 				6E0126201A523EC600FB1736 /* Categories */,
 				6E5B3F601A82168E0091A556 /* Data Manager */,
+				6E2F98091AA56CD9009E66B6 /* Fonts */,
 				6E4774B71A4A0FF6006C0B51 /* Images.xcassets */,
 				6E0126191A4B5C9900FB1736 /* KHAppDelegate.h */,
 				6E01261A1A4B5C9900FB1736 /* KHAppDelegate.m */,
@@ -448,6 +465,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E4774BB1A4A0FF6006C0B51 /* LaunchScreen.xib in Resources */,
+				6E2F980D1AA56D0F009E66B6 /* Lato-Bold.ttf in Resources */,
+				6E2F980F1AA56D0F009E66B6 /* Lato-Regular.ttf in Resources */,
+				6E2F980E1AA56D0F009E66B6 /* Lato-Italic.ttf in Resources */,
 				6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
