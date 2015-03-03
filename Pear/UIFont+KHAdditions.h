@@ -12,5 +12,6 @@
 
 + (UIFont *)regularWithSize:(CGFloat)size;
 + (UIFont *)serifWithSize:(CGFloat)size;
++ (UIFont *)boldWithSize:(CGFloat)size;
 
 @end

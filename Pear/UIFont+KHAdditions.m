@@ -10,6 +10,7 @@
 
 static NSString *const KHkRegularFontName = @"Helvetica";
 static NSString *const KhkSerifFontName = @"Helvetica Neue";
+static NSString *const KHkBoldFontName = @"Helvetica";
 
 @implementation UIFont (KHAdditions)
 
@@ -19,6 +20,10 @@ static NSString *const KhkSerifFontName = @"Helvetica Neue";
 
 + (UIFont *)serifWithSize:(CGFloat)size {
     return [UIFont fontWithName:KhkSerifFontName size:size];
+}
+
++ (UIFont *)boldWithSize:(CGFloat)size {
+    return [UIFont fontWithName:KHkBoldFontName size:size];
 }
 
 @end
