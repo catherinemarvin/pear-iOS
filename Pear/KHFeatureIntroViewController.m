@@ -106,6 +106,9 @@
         vc;
     });
     [lastVC didMoveToParentViewController:self];
+    
+    CGFloat startingXOffset = CGRectGetWidth(self.scrollView.frame); // Start on page 1
+    self.scrollView.contentOffset = CGPointMake(startingXOffset, 0);
 }
 
 - (void)_setupCallToAction {
@@ -157,6 +160,13 @@
     float fractionalPage = self.scrollView.contentOffset.x / pageWidth;
     NSInteger page = lround(fractionalPage);
     self.pageControl.currentPage = page;
+    
+    CGFloat offsetWhenScrolledRight = pageWidth * ([self.dataSource count] - 1);
+    if (scrollView.contentOffset.x == offsetWhenScrolledRight) {
+        // Jump to the left
+    } else if (scrollView.contentOffset.x == 0) {
+        // Jump around
+    }
 }
 
 @end
