@@ -13,6 +13,9 @@
 @interface KHFeatureIntroView()
 
 @property (nonatomic, strong) UIImageView *backgroundImage;
+@property (nonatomic, strong) UIView *overlay;
+
+
 @property (nonatomic, strong) UILabel *headerTextLabel;
 @property (nonatomic, strong) UILabel *descriptionTextLabel;
 
@@ -28,6 +31,14 @@
         });
         [self addSubview:_backgroundImage];
         
+        _overlay = ({
+            UIView *view = [[UIView alloc] init];
+            view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.4];
+            view;
+        });
+        [_backgroundImage addSubview:_overlay];
+        
+        
         _headerTextLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.font = [UIFont regularWithSize:24];
@@ -36,7 +47,7 @@
             
             label;
         });
-        [_backgroundImage addSubview:_headerTextLabel];
+        [_overlay addSubview:_headerTextLabel];
         
         _descriptionTextLabel = ({
             UILabel *label = [[UILabel alloc] init];
@@ -46,7 +57,7 @@
             label.numberOfLines = 0;
             label;
         });
-        [_backgroundImage addSubview:_descriptionTextLabel];
+        [_overlay addSubview:_descriptionTextLabel];
         [self _initializeAutolayout];
     }
     return self;
@@ -56,6 +67,10 @@
     CGFloat sidePadding = 40.0f;
     [self.backgroundImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
+    }];
+    
+    [self.overlay mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.backgroundImage);
     }];
     
     [self.headerTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
