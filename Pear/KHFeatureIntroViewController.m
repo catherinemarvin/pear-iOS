@@ -54,7 +54,7 @@
     [self.view addSubview:self.scrollView];
     self.scrollView.frame = self.view.bounds;
     CGSize pageScrollViewSize = self.scrollView.frame.size;
-    self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * ([self.dataSource count] + 2), pageScrollViewSize.height);
+    self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * ([self.dataSource count] + 2), pageScrollViewSize.height); // To enable infinite scrolling, we pad the actual VCs with additional first page/last page VCs
     self.scrollView.pagingEnabled = YES;
     self.scrollView.delegate = self;
 }
@@ -94,6 +94,7 @@
         [vc didMoveToParentViewController:self];
     }
     
+    // Add the first VC after the last one.
     UIViewController *lastVC = ({
         UIViewController *vc = [self _viewControllerAtIndex:0];
         [self addChildViewController:vc];
@@ -107,7 +108,7 @@
     });
     [lastVC didMoveToParentViewController:self];
     
-    CGFloat startingXOffset = CGRectGetWidth(self.scrollView.frame); // Start on page 1
+    CGFloat startingXOffset = CGRectGetWidth(self.scrollView.frame); // The first page has been offset.
     self.scrollView.contentOffset = CGPointMake(startingXOffset, 0);
 }
 
@@ -155,6 +156,12 @@
 
 #pragma mark - UIScrollViewDelegate
 
+/**
+ When we wrap around, we jump to a content offset so it looks like we have infinite scrolling.
+ Ex: Our VCs are set up: C [A] B C A
+ When the user swipes left, we detect that we're at the beginning and then jump the offset.
+ The result is: C A B [C] A
+ */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
     float fractionalPage = (self.scrollView.contentOffset.x - pageWidth) / pageWidth; // Take into account fake page 0, which is really the last page placed at the beginning
