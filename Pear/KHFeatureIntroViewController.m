@@ -163,10 +163,9 @@
     
     CGFloat offsetWhenScrolledRight = pageWidth * ([self.dataSource count] + 1);
     if (scrollView.contentOffset.x == offsetWhenScrolledRight) {
-        // Jump to the left
-        NSLog(@"RIGHTMOST");
+        scrollView.contentOffset = CGPointMake(pageWidth, 0);
     } else if (scrollView.contentOffset.x == 0) {
-        NSLog(@"LEFTMOST");
+        scrollView.contentOffset = CGPointMake(pageWidth * [self.dataSource count], 0);
     }
 }
 
