@@ -155,7 +155,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
     float fractionalPage = self.scrollView.contentOffset.x / pageWidth;
-    NSInteger page =lround(fractionalPage);
+    NSInteger page = lround(fractionalPage);
     self.pageControl.currentPage = page;
 }
 
