@@ -49,6 +49,7 @@
     self.signUpView = signupView;
     self.view = scroll;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -56,6 +57,12 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+    [self _setBarButtonItems];
+}
+
+- (void)_setBarButtonItems {
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(_cancelTapped:)];
+    self.navigationItem.leftBarButtonItem = done;
 }
 
 #pragma mark - Keyboard Notifications
@@ -91,6 +98,7 @@
     
     self.keyboardVisible = NO;
 }
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -107,7 +115,10 @@
 
 - (void)_signUpTapped:(id)sender {
     [self _attemptSignup];
-    
+}
+
+- (void)_cancelTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Signup
