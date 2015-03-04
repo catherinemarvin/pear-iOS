@@ -9,6 +9,7 @@
 // VCs
 #import "KHFeatureIntroViewController.h"
 #import "KHFeatureIntroContentViewController.h"
+#import "KHSignUpViewController.h"
 
 // Data Source
 #import "KHFeatureIntroductionDataSource.h"
@@ -16,7 +17,7 @@
 // Helper
 #import "UIColor+KHHexString.h"
 
-// Views
+// View Helpers
 #import <Masonry/Masonry.h>
 #import "UIFont+KHAdditions.h"
 
@@ -117,6 +118,7 @@
     self.callToAction.backgroundColor = [UIColor colorWithHexString:@"fed136"];
     [self.callToAction setTitle:[NSLocalizedString(@"Let's go!", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
     self.callToAction.titleLabel.font = [UIFont boldWithSize:14];
+    [self.callToAction addTarget:self action:@selector(_callToActionTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)_setupAutolayout {
@@ -152,6 +154,14 @@
         return vc;
     }
     return nil;
+}
+
+#pragma mark - Button Actions
+
+- (void)_callToActionTapped:(id)sender {
+    KHSignUpViewController *vc = [[KHSignUpViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - UIScrollViewDelegate
