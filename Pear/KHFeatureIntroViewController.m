@@ -68,17 +68,44 @@
 }
 
 - (void)_setupIntroScreens {
+    // Add the last intro screen behind the first one.
+    UIViewController *firstVC = ({
+        UIViewController *vc = [self _viewControllerAtIndex:[self.dataSource count] - 1];
+        [self addChildViewController:vc];
+        CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
+        CGFloat pageHeight = CGRectGetHeight(self.scrollView.frame);
+        CGFloat xOffset = 0;
+        CGRect frame = CGRectMake(xOffset, 0, pageWidth, pageHeight);
+        vc.view.frame = frame;
+        [self.scrollView addSubview:vc.view];
+        vc;
+    });
+    [firstVC didMoveToParentViewController:self];
+    
     for (int i = 0; i < [self.dataSource count]; i++) {
         UIViewController *vc = [self _viewControllerAtIndex:i];
         [self addChildViewController:vc];
         CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
         CGFloat pageHeight = CGRectGetHeight(self.scrollView.frame);
-        CGFloat xOffset = pageWidth * i;
+        CGFloat xOffset = pageWidth * (i + 1);
         CGRect frame = CGRectMake(xOffset, 0, pageWidth, pageHeight);
         vc.view.frame = frame;
         [self.scrollView addSubview:vc.view];
         [vc didMoveToParentViewController:self];
     }
+    
+    UIViewController *lastVC = ({
+        UIViewController *vc = [self _viewControllerAtIndex:0];
+        [self addChildViewController:vc];
+        CGFloat pageWidth = CGRectGetWidth(self.scrollView.frame);
+        CGFloat pageHeight = CGRectGetHeight(self.scrollView.frame);
+        CGFloat xOffset = pageWidth * ([self.dataSource count] + 1);
+        CGRect frame = CGRectMake(xOffset, 0, pageWidth, pageHeight);
+        vc.view.frame = frame;
+        [self.scrollView addSubview:vc.view];
+        vc;
+    });
+    [lastVC didMoveToParentViewController:self];
 }
 
 - (void)_setupCallToAction {
