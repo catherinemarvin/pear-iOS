@@ -54,7 +54,7 @@
     [self.view addSubview:self.scrollView];
     self.scrollView.frame = self.view.bounds;
     CGSize pageScrollViewSize = self.scrollView.frame.size;
-    self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * [self.dataSource count], pageScrollViewSize.height);
+    self.scrollView.contentSize = CGSizeMake(pageScrollViewSize.width * ([self.dataSource count] + 2), pageScrollViewSize.height);
     self.scrollView.pagingEnabled = YES;
     self.scrollView.delegate = self;
 }
@@ -161,11 +161,12 @@
     NSInteger page = lround(fractionalPage);
     self.pageControl.currentPage = page;
     
-    CGFloat offsetWhenScrolledRight = pageWidth * ([self.dataSource count] - 1);
+    CGFloat offsetWhenScrolledRight = pageWidth * ([self.dataSource count] + 1);
     if (scrollView.contentOffset.x == offsetWhenScrolledRight) {
         // Jump to the left
+        NSLog(@"RIGHTMOST");
     } else if (scrollView.contentOffset.x == 0) {
-        // Jump around
+        NSLog(@"LEFTMOST");
     }
 }
 
