@@ -10,6 +10,7 @@
 #import "KHFeatureIntroViewController.h"
 #import "KHFeatureIntroContentViewController.h"
 #import "KHSignUpViewController.h"
+#import "KHLoginViewController.h"
 
 // Data Source
 #import "KHFeatureIntroductionDataSource.h"
@@ -26,7 +27,8 @@
 @property (nonatomic, strong) KHFeatureIntroductionDataSource *dataSource;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
-@property (nonatomic, strong) UIButton *callToAction;
+@property (nonatomic, strong) UIButton *signupButton;
+@property (nonatomic, strong) UIButton *loginButton;
 
 @end
 
@@ -37,7 +39,8 @@
         _dataSource = [[KHFeatureIntroductionDataSource alloc] init];
         _scrollView = [[UIScrollView alloc] init];
         _pageControl = [[UIPageControl alloc] init];
-        _callToAction = [[UIButton alloc] init];
+        _signupButton = [[UIButton alloc] init];
+        _loginButton = [[UIButton alloc] init];
     }
     return self;
 }
@@ -47,7 +50,7 @@
     [self _setupScrollView];
     [self _setupPageControl];
     [self _setupIntroScreens];
-    [self _setupCallToAction];
+    [self _setupBottomButtons];
     [self _setupAutolayout];
 }
 
@@ -113,24 +116,37 @@
     self.scrollView.contentOffset = CGPointMake(startingXOffset, 0);
 }
 
-- (void)_setupCallToAction {
-    [self.view addSubview:self.callToAction];
-    self.callToAction.backgroundColor = [UIColor colorWithHexString:@"fed136"];
-    [self.callToAction setTitle:[NSLocalizedString(@"Let's go!", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
-    self.callToAction.titleLabel.font = [UIFont boldWithSize:14];
-    [self.callToAction addTarget:self action:@selector(_callToActionTapped:) forControlEvents:UIControlEventTouchUpInside];
+- (void)_setupBottomButtons {
+    [self.view addSubview:self.signupButton];
+    self.signupButton.backgroundColor = [UIColor colorWithHexString:@"fed136"];
+    [self.signupButton setTitle:[NSLocalizedString(@"Let's go!", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
+    self.signupButton.titleLabel.font = [UIFont boldWithSize:14];
+    [self.signupButton addTarget:self action:@selector(_signupButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:self.loginButton];
+    self.loginButton.backgroundColor = self.signupButton.backgroundColor;
+    [self.loginButton setTitle:[NSLocalizedString(@"Sign up", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
+    self.loginButton.titleLabel.font = self.signupButton.titleLabel.font;
+    [self.loginButton addTarget:self action:@selector(_loginButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)_setupAutolayout {
     CGFloat padding = 20.0f;
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.callToAction.mas_top).with.offset(-padding);
+        make.bottom.equalTo(self.signupButton.mas_top).with.offset(-padding);
     }];
     
     CGFloat buttonHeight = 44.0f;
-    [self.callToAction mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.equalTo(self.view);
+    [self.signupButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view);
+        make.bottom.equalTo(self.view);
+        make.height.mas_equalTo(buttonHeight);
+        make.width.equalTo(self.loginButton.mas_width);
+    }];
+    
+    [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view);
         make.bottom.equalTo(self.view);
         make.height.mas_equalTo(buttonHeight);
     }];
@@ -158,8 +174,14 @@
 
 #pragma mark - Button Actions
 
-- (void)_callToActionTapped:(id)sender {
+- (void)_signupButtonTapped:(id)sender {
     KHSignUpViewController *vc = [[KHSignUpViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)_loginButtonTapped:(id)sender {
+    KHLoginViewController *vc = [[KHLoginViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
 }
