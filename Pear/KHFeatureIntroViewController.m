@@ -27,7 +27,10 @@
 @property (nonatomic, strong) KHFeatureIntroductionDataSource *dataSource;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
+
+@property (nonatomic, strong) UIView *footer;
 @property (nonatomic, strong) UIButton *signupButton;
+@property (nonatomic, strong) UIView *divider;
 @property (nonatomic, strong) UIButton *loginButton;
 
 @end
@@ -39,6 +42,8 @@
         _dataSource = [[KHFeatureIntroductionDataSource alloc] init];
         _scrollView = [[UIScrollView alloc] init];
         _pageControl = [[UIPageControl alloc] init];
+        _footer = [[UIView alloc] init];
+        _divider = [[UIView alloc] init];
         _signupButton = [[UIButton alloc] init];
         _loginButton = [[UIButton alloc] init];
     }
@@ -50,7 +55,7 @@
     [self _setupScrollView];
     [self _setupPageControl];
     [self _setupIntroScreens];
-    [self _setupBottomButtons];
+    [self _setupFooter];
     [self _setupAutolayout];
 }
 
@@ -116,14 +121,19 @@
     self.scrollView.contentOffset = CGPointMake(startingXOffset, 0);
 }
 
-- (void)_setupBottomButtons {
-    [self.view addSubview:self.signupButton];
+- (void)_setupFooter {
+    [self.view addSubview:self.footer];
+    
+    [self.footer addSubview:self.signupButton];
     self.signupButton.backgroundColor = [UIColor colorWithHexString:@"fed136"];
     [self.signupButton setTitle:[NSLocalizedString(@"Let's go!", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
     self.signupButton.titleLabel.font = [UIFont boldWithSize:14];
     [self.signupButton addTarget:self action:@selector(_signupButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:self.loginButton];
+    [self.footer addSubview:self.divider];
+    self.divider.backgroundColor = [UIColor darkGrayColor];
+    
+    [self.footer addSubview:self.loginButton];
     self.loginButton.backgroundColor = self.signupButton.backgroundColor;
     [self.loginButton setTitle:[NSLocalizedString(@"Sign up", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
     self.loginButton.titleLabel.font = self.signupButton.titleLabel.font;
@@ -138,17 +148,28 @@
     }];
     
     CGFloat buttonHeight = 44.0f;
-    [self.signupButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view);
+    [self.footer mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.view);
         make.bottom.equalTo(self.view);
         make.height.mas_equalTo(buttonHeight);
-        make.width.equalTo(self.loginButton.mas_width);
+    }];
+    
+    [self.signupButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.bottom.equalTo(self.footer);
+        make.left.equalTo(self.footer);
+        make.right.equalTo(self.divider.mas_left);
+    }];
+    
+    [self.divider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.bottom.equalTo(self.footer);
+        make.width.mas_equalTo(1);
+        make.centerX.equalTo(self.footer);
     }];
     
     [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.view);
-        make.bottom.equalTo(self.view);
-        make.height.mas_equalTo(buttonHeight);
+        make.top.and.bottom.equalTo(self.footer);
+        make.right.equalTo(self.footer);
+        make.left.equalTo(self.divider.mas_right);
     }];
 }
 
