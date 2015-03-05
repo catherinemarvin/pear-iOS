@@ -8,10 +8,13 @@
 
 #import "KHJoinAHouseView.h"
 
+// Helpers
 #import <Masonry/Masonry.h>
+#import "UIFont+KHAdditions.h"
 
 @interface KHJoinAHouseView()
 
+@property (nonatomic, strong) UIView *container;
 @property (nonatomic, strong) UITextField *houseNameField;
 @property (nonatomic, strong) UITextField *passwordField;
 
@@ -21,14 +24,22 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        _container = [[UIView alloc] init];
+        [self addSubview:_container];
+        
         _houseNameField = [[UITextField alloc] init];
         _houseNameField.placeholder = NSLocalizedString(@"House Name", nil);
-        [self addSubview:_houseNameField];
+        _houseNameField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _houseNameField.backgroundColor = [UIColor lightGrayColor];
+        _houseNameField.font = [UIFont regularWithSize:14.0f];
+        [_container addSubview:_houseNameField];
         
         _passwordField = [[UITextField alloc] init];
         _passwordField.placeholder = NSLocalizedString(@"Password", nil);
         _passwordField.secureTextEntry = YES;
-        [self addSubview:_passwordField];
+        _passwordField.backgroundColor = [UIColor lightGrayColor];
+        _passwordField.font = [UIFont regularWithSize:14.0f];
+        [_container addSubview:_passwordField];
         
         [self _initializeAutolayout];
     }
@@ -36,14 +47,22 @@
 }
 
 - (void)_initializeAutolayout {
-    [self.houseNameField mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.container mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.passwordField);
         make.center.equalTo(self);
+    }];
+    
+    CGFloat buttonHeight = 44.0f;
+    [self.houseNameField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.container);
         make.left.and.right.equalTo(self);
+        make.height.mas_equalTo(buttonHeight);
     }];
     
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.houseNameField.mas_bottom);
         make.left.and.right.equalTo(self.houseNameField);
+        make.height.equalTo(self.houseNameField);
     }];
 }
 
