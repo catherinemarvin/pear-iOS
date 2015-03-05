@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSString *houseName;
 @property (nonatomic, strong) NSString *housePassword;
+@property (nonatomic, strong) NSString *buttonTitle;
 
 @end

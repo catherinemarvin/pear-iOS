@@ -15,8 +15,10 @@
 @interface KHJoinAHouseView()
 
 @property (nonatomic, strong) UIView *container;
+
 @property (nonatomic, strong) UITextField *houseNameField;
 @property (nonatomic, strong) UITextField *passwordField;
+@property (nonatomic, strong) UIButton *joinHouseButton;
 
 @end
 
@@ -41,6 +43,9 @@
         _passwordField.font = [UIFont regularWithSize:14.0f];
         [_container addSubview:_passwordField];
         
+        _joinHouseButton = [[UIButton alloc] init];
+        [_container addSubview:_joinHouseButton];
+        
         [self _initializeAutolayout];
     }
     return self;
@@ -64,6 +69,12 @@
         make.top.equalTo(self.houseNameField.mas_bottom);
         make.left.and.right.equalTo(self.houseNameField);
         make.height.equalTo(self.houseNameField);
+    }];
+    
+    [self.joinHouseButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.passwordField.mas_bottom);
+        make.left.and.right.equalTo(self.container);
+        make.height.mas_equalTo(buttonHeight);
     }];
 }
 
