@@ -22,9 +22,12 @@
 - (instancetype)init {
     if (self = [super init]) {
         _houseNameField = [[UITextField alloc] init];
+        _houseNameField.placeholder = NSLocalizedString(@"House Name", nil);
         [self addSubview:_houseNameField];
         
         _passwordField = [[UITextField alloc] init];
+        _passwordField.placeholder = NSLocalizedString(@"Password", nil);
+        _passwordField.secureTextEntry = YES;
         [self addSubview:_passwordField];
         
         [self _initializeAutolayout];
@@ -40,7 +43,7 @@
     
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.houseNameField.mas_bottom);
-        make.left.and.right.equalTo(self.passwordField);
+        make.left.and.right.equalTo(self.houseNameField);
     }];
 }
 
