@@ -50,12 +50,13 @@
     [self.container mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.passwordField);
         make.center.equalTo(self);
+        make.left.and.right.equalTo(self);
     }];
     
     CGFloat buttonHeight = 44.0f;
     [self.houseNameField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.container);
-        make.left.and.right.equalTo(self);
+        make.left.and.right.equalTo(self.container);
         make.height.mas_equalTo(buttonHeight);
     }];
     
