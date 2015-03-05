@@ -33,6 +33,13 @@ PODS:
   - Mantle/extobjc (1.5.4)
   - Masonry (0.5.3)
   - MBProgressHUD (0.9)
+  - ReactiveCocoa (2.4.7):
+    - ReactiveCocoa/UI (= 2.4.7)
+  - ReactiveCocoa/Core (2.4.7):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.4.7)
+  - ReactiveCocoa/UI (2.4.7):
+    - ReactiveCocoa/Core
 
 DEPENDENCIES:
   - AFNetworking
@@ -41,6 +48,7 @@ DEPENDENCIES:
   - Mantle
   - Masonry
   - MBProgressHUD
+  - ReactiveCocoa
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
@@ -49,5 +57,6 @@ SPEC CHECKSUMS:
   Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
   Masonry: 35368c2ca9577ca87722c12fc52c4bad9b1c1516
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  ReactiveCocoa: 313fc53cc9aeb2bbbc3f5f13c7eac16478d9af8f
 
 COCOAPODS: 0.35.0

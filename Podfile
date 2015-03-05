@@ -11,6 +11,7 @@ pod 'MagicalRecord'
 pod 'CocoaLumberjack'
 pod 'MBProgressHUD'
 pod 'Mantle'
+pod 'ReactiveCocoa'
 
 end
 
