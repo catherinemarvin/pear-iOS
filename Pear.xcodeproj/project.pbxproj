@@ -26,6 +26,7 @@
 		6E3175D61AA8289E00BF9708 /* KHJoinAHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3175D51AA8289E00BF9708 /* KHJoinAHouseViewController.m */; };
 		6E3175D91AA828AB00BF9708 /* KHJoinAHouseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3175D81AA828AB00BF9708 /* KHJoinAHouseView.m */; };
 		6E3175DD1AA8296B00BF9708 /* KHJoinAHouseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3175DC1AA8296B00BF9708 /* KHJoinAHouseViewModel.m */; };
+		6E3175E11AA836E400BF9708 /* KHJoinAHouseDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3175E01AA836E400BF9708 /* KHJoinAHouseDataManager.m */; };
 		6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774A91A4A0FF6006C0B51 /* main.m */; };
 		6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */; };
 		6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B71A4A0FF6006C0B51 /* Images.xcassets */; };
@@ -88,6 +89,9 @@
 		6E3175D81AA828AB00BF9708 /* KHJoinAHouseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHJoinAHouseView.m; sourceTree = "<group>"; };
 		6E3175DB1AA8296B00BF9708 /* KHJoinAHouseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHJoinAHouseViewModel.h; sourceTree = "<group>"; };
 		6E3175DC1AA8296B00BF9708 /* KHJoinAHouseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHJoinAHouseViewModel.m; sourceTree = "<group>"; };
+		6E3175DF1AA836E400BF9708 /* KHJoinAHouseDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHJoinAHouseDataManager.h; sourceTree = "<group>"; };
+		6E3175E01AA836E400BF9708 /* KHJoinAHouseDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHJoinAHouseDataManager.m; sourceTree = "<group>"; };
+		6E3175E21AA836F500BF9708 /* KHJoinAHouseDataManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHJoinAHouseDataManagerDelegate.h; sourceTree = "<group>"; };
 		6E4774A41A4A0FF6006C0B51 /* Pear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4774A81A4A0FF6006C0B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4774A91A4A0FF6006C0B51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 		6E3175D21AA827BA00BF9708 /* Join a House */ = {
 			isa = PBXGroup;
 			children = (
+				6E3175DE1AA836D300BF9708 /* Data Manager */,
 				6E3175DA1AA8295C00BF9708 /* ViewModel */,
 				6E3175D31AA8289000BF9708 /* Views */,
 			);
@@ -342,6 +347,16 @@
 				6E3175DC1AA8296B00BF9708 /* KHJoinAHouseViewModel.m */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		6E3175DE1AA836D300BF9708 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6E3175DF1AA836E400BF9708 /* KHJoinAHouseDataManager.h */,
+				6E3175E01AA836E400BF9708 /* KHJoinAHouseDataManager.m */,
+				6E3175E21AA836F500BF9708 /* KHJoinAHouseDataManagerDelegate.h */,
+			);
+			name = "Data Manager";
 			sourceTree = "<group>";
 		};
 		6E47749B1A4A0FF6006C0B51 = {
@@ -589,6 +604,7 @@
 				6E2F97F71A9EDBC2009E66B6 /* KHFeatureIntroductionContent.m in Sources */,
 				6E7D17331A89B4EA000502BE /* KHFeatureIntroContentViewController.m in Sources */,
 				6E3175D61AA8289E00BF9708 /* KHJoinAHouseViewController.m in Sources */,
+				6E3175E11AA836E400BF9708 /* KHJoinAHouseDataManager.m in Sources */,
 				6E0126391A59FDA800FB1736 /* KHChoreViewController.m in Sources */,
 				6E0126261A52432600FB1736 /* UIImage+KHAdditions.m in Sources */,
 				6E5B3F731A85BD520091A556 /* KHAPIManager.m in Sources */,
