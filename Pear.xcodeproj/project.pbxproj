@@ -126,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				6E0126321A589A0500FB1736 /* Chores */,
-				6E0126271A528DAC00FB1736 /* Register/Login */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -135,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				6E0126331A589A1100FB1736 /* Chores */,
-				6E01262E1A528EAF00FB1736 /* Register/Login */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -151,28 +149,6 @@
 				6E2F98071AA43541009E66B6 /* UIFont+KHAdditions.m */,
 			);
 			name = Categories;
-			sourceTree = "<group>";
-		};
-		6E0126271A528DAC00FB1736 /* Register/Login */ = {
-			isa = PBXGroup;
-			children = (
-				6E0126161A4B5A4400FB1736 /* KHLoginViewController.h */,
-				6E0126171A4B5A4400FB1736 /* KHLoginViewController.m */,
-				6E0126281A528DD700FB1736 /* KHSignUpViewController.h */,
-				6E0126291A528DD700FB1736 /* KHSignUpViewController.m */,
-			);
-			name = Register/Login;
-			sourceTree = "<group>";
-		};
-		6E01262E1A528EAF00FB1736 /* Register/Login */ = {
-			isa = PBXGroup;
-			children = (
-				6E01261D1A4B623B00FB1736 /* KHLoginView.h */,
-				6E01261E1A4B623B00FB1736 /* KHLoginView.m */,
-				6E01262F1A528EC500FB1736 /* KHSignUpView.h */,
-				6E0126301A528EC500FB1736 /* KHSignUpView.m */,
-			);
-			name = Register/Login;
 			sourceTree = "<group>";
 		};
 		6E0126321A589A0500FB1736 /* Chores */ = {
@@ -197,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				6E2F97EA1A9D9F5D009E66B6 /* Feature Introduction */,
+				6E3175C51AA823C100BF9708 /* Login */,
+				6E3175C61AA823C800BF9708 /* Register */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -259,6 +237,66 @@
 				6E2F980C1AA56D0F009E66B6 /* Lato-Regular.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		6E3175C51AA823C100BF9708 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6E3175C81AA823E000BF9708 /* Data Manager */,
+				6E3175C91AA8240500BF9708 /* Views */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		6E3175C61AA823C800BF9708 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				6E3175C71AA823D500BF9708 /* Data Manager */,
+				6E3175CA1AA8241B00BF9708 /* Views */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		6E3175C71AA823D500BF9708 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6E7D17061A886073000502BE /* KHRegisterDataManager.h */,
+				6E7D17071A886073000502BE /* KHRegisterDataManager.m */,
+				6E7D17091A8860DA000502BE /* KHRegisterDataManagerDelegate.h */,
+			);
+			name = "Data Manager";
+			sourceTree = "<group>";
+		};
+		6E3175C81AA823E000BF9708 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6E5B3F621A8216D20091A556 /* KHLoginDataManager.h */,
+				6E5B3F631A8216D20091A556 /* KHLoginDataManager.m */,
+				6E5B3F651A82176F0091A556 /* KHLoginDataManagerDelegate.h */,
+			);
+			name = "Data Manager";
+			sourceTree = "<group>";
+		};
+		6E3175C91AA8240500BF9708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E01261D1A4B623B00FB1736 /* KHLoginView.h */,
+				6E01261E1A4B623B00FB1736 /* KHLoginView.m */,
+				6E0126161A4B5A4400FB1736 /* KHLoginViewController.h */,
+				6E0126171A4B5A4400FB1736 /* KHLoginViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6E3175CA1AA8241B00BF9708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E01262F1A528EC500FB1736 /* KHSignUpView.h */,
+				6E0126301A528EC500FB1736 /* KHSignUpView.m */,
+				6E0126281A528DD700FB1736 /* KHSignUpViewController.h */,
+				6E0126291A528DD700FB1736 /* KHSignUpViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		6E47749B1A4A0FF6006C0B51 = {
@@ -329,21 +367,9 @@
 		6E5B3F601A82168E0091A556 /* Data Manager */ = {
 			isa = PBXGroup;
 			children = (
-				6E7D17051A88605F000502BE /* Register */,
 				6E5B3F701A85BD2E0091A556 /* Base API */,
-				6E5B3F611A8216C30091A556 /* Login */,
 			);
 			name = "Data Manager";
-			sourceTree = "<group>";
-		};
-		6E5B3F611A8216C30091A556 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				6E5B3F621A8216D20091A556 /* KHLoginDataManager.h */,
-				6E5B3F631A8216D20091A556 /* KHLoginDataManager.m */,
-				6E5B3F651A82176F0091A556 /* KHLoginDataManagerDelegate.h */,
-			);
-			name = Login;
 			sourceTree = "<group>";
 		};
 		6E5B3F701A85BD2E0091A556 /* Base API */ = {
@@ -353,16 +379,6 @@
 				6E5B3F721A85BD520091A556 /* KHAPIManager.m */,
 			);
 			name = "Base API";
-			sourceTree = "<group>";
-		};
-		6E7D17051A88605F000502BE /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				6E7D17061A886073000502BE /* KHRegisterDataManager.h */,
-				6E7D17071A886073000502BE /* KHRegisterDataManager.m */,
-				6E7D17091A8860DA000502BE /* KHRegisterDataManagerDelegate.h */,
-			);
-			name = Register;
 			sourceTree = "<group>";
 		};
 		7608088087C55120025A036E /* Pods */ = {
