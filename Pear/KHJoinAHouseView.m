@@ -44,6 +44,7 @@
         [_container addSubview:_passwordField];
         
         _joinHouseButton = [[UIButton alloc] init];
+        _joinHouseButton.backgroundColor = [UIColor blackColor];
         [_container addSubview:_joinHouseButton];
         
         [self _initializeAutolayout];

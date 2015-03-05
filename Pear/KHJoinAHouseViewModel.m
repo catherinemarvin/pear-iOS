@@ -10,4 +10,11 @@
 
 @implementation KHJoinAHouseViewModel
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _buttonTitle = NSLocalizedString(@"Join now", nil);
+    }
+    return self;
+}
+
 @end

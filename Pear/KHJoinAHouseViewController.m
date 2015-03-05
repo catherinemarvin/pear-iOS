@@ -15,6 +15,7 @@
 
 // Helpers
 #import <Masonry/Masonry.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface KHJoinAHouseViewController ()
 
@@ -49,6 +50,10 @@
 }
 
 - (void)_bindViewModel {
+    RAC(self.viewModel, houseName) = [self.joinAHouseView.houseNameField rac_textSignal];
+    RAC(self.viewModel, housePassword) = [self.joinAHouseView.passwordField rac_textSignal];
+    RAC(self.joinAHouseView.joinHouseButton.titleLabel, text) = RACObserve(self.viewModel, buttonTitle);
+    [self.joinAHouseView.joinHouseButton rac_liftSelector:@selector(setTitle:forState:) withSignals:RACObserve(self.viewModel, buttonTitle), [RACSignal return:@(UIControlStateNormal)], nil];
 }
 
 @end

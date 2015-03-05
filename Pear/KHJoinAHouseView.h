@@ -10,4 +10,10 @@
 
 @interface KHJoinAHouseView : UIView
 
+
+@property (nonatomic, strong, readonly) UITextField *houseNameField;
+@property (nonatomic, strong, readonly) UITextField *passwordField;
+@property (nonatomic, strong, readonly) UIButton *joinHouseButton;
+
+
 @end
