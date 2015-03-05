@@ -125,22 +125,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6E0126151A4B5A1200FB1736 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				6E0126321A589A0500FB1736 /* Chores */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		6E01261C1A4B622600FB1736 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				6E0126331A589A1100FB1736 /* Chores */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		6E0126201A523EC600FB1736 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,28 +138,12 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		6E0126321A589A0500FB1736 /* Chores */ = {
-			isa = PBXGroup;
-			children = (
-				6E0126341A589A2D00FB1736 /* KHHouseChoresViewController.h */,
-				6E0126351A589A2D00FB1736 /* KHHouseChoresViewController.m */,
-				6E0126371A59FDA800FB1736 /* KHChoreViewController.h */,
-				6E0126381A59FDA800FB1736 /* KHChoreViewController.m */,
-			);
-			name = Chores;
-			sourceTree = "<group>";
-		};
-		6E0126331A589A1100FB1736 /* Chores */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Chores;
-			sourceTree = "<group>";
-		};
 		6E2F97E91A9D9F52009E66B6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6E3175CF1AA8273C00BF9708 /* Chores */,
 				6E2F97EA1A9D9F5D009E66B6 /* Feature Introduction */,
+				6E3175D01AA8274C00BF9708 /* Finances */,
 				6E3175C51AA823C100BF9708 /* Login */,
 				6E3175C61AA823C800BF9708 /* Register */,
 			);
@@ -311,6 +279,32 @@
 			name = "Tab Bar";
 			sourceTree = "<group>";
 		};
+		6E3175CF1AA8273C00BF9708 /* Chores */ = {
+			isa = PBXGroup;
+			children = (
+				6E3175D11AA8276300BF9708 /* Views */,
+			);
+			name = Chores;
+			sourceTree = "<group>";
+		};
+		6E3175D01AA8274C00BF9708 /* Finances */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Finances;
+			sourceTree = "<group>";
+		};
+		6E3175D11AA8276300BF9708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E0126341A589A2D00FB1736 /* KHHouseChoresViewController.h */,
+				6E0126351A589A2D00FB1736 /* KHHouseChoresViewController.m */,
+				6E0126371A59FDA800FB1736 /* KHChoreViewController.h */,
+				6E0126381A59FDA800FB1736 /* KHChoreViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		6E47749B1A4A0FF6006C0B51 = {
 			isa = PBXGroup;
 			children = (
@@ -345,8 +339,6 @@
 				6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */,
 				6E4774A71A4A0FF6006C0B51 /* Supporting Files */,
 				6E3175CB1AA8255000BF9708 /* Tab Bar */,
-				6E0126151A4B5A1200FB1736 /* View Controllers */,
-				6E01261C1A4B622600FB1736 /* Views */,
 			);
 			path = Pear;
 			sourceTree = "<group>";
