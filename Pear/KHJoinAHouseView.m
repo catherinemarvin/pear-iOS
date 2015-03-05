@@ -8,14 +8,41 @@
 
 #import "KHJoinAHouseView.h"
 
+#import <Masonry/Masonry.h>
+
+@interface KHJoinAHouseView()
+
+@property (nonatomic, strong) UITextField *houseNameField;
+@property (nonatomic, strong) UITextField *passwordField;
+
+@end
+
 @implementation KHJoinAHouseView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)init {
+    if (self = [super init]) {
+        _houseNameField = [[UITextField alloc] init];
+        [self addSubview:_houseNameField];
+        
+        _passwordField = [[UITextField alloc] init];
+        [self addSubview:_passwordField];
+        
+        [self _initializeAutolayout];
+    }
+    return self;
 }
-*/
+
+- (void)_initializeAutolayout {
+    [self.houseNameField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self);
+    }];
+    
+    [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.houseNameField.mas_bottom);
+    }];
+}
+
+
+
 
 @end
