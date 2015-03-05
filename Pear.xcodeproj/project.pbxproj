@@ -22,6 +22,7 @@
 		6E2F980D1AA56D0F009E66B6 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F980A1AA56D0F009E66B6 /* Lato-Bold.ttf */; };
 		6E2F980E1AA56D0F009E66B6 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F980B1AA56D0F009E66B6 /* Lato-Italic.ttf */; };
 		6E2F980F1AA56D0F009E66B6 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E2F980C1AA56D0F009E66B6 /* Lato-Regular.ttf */; };
+		6E3175CE1AA8257500BF9708 /* KHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3175CD1AA8257500BF9708 /* KHTabBarController.m */; };
 		6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774A91A4A0FF6006C0B51 /* main.m */; };
 		6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */; };
 		6E4774B81A4A0FF6006C0B51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4774B71A4A0FF6006C0B51 /* Images.xcassets */; };
@@ -76,6 +77,8 @@
 		6E2F980A1AA56D0F009E66B6 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		6E2F980B1AA56D0F009E66B6 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
 		6E2F980C1AA56D0F009E66B6 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		6E3175CC1AA8257500BF9708 /* KHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KHTabBarController.h; sourceTree = "<group>"; };
+		6E3175CD1AA8257500BF9708 /* KHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KHTabBarController.m; sourceTree = "<group>"; };
 		6E4774A41A4A0FF6006C0B51 /* Pear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4774A81A4A0FF6006C0B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4774A91A4A0FF6006C0B51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -299,6 +302,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		6E3175CB1AA8255000BF9708 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				6E3175CC1AA8257500BF9708 /* KHTabBarController.h */,
+				6E3175CD1AA8257500BF9708 /* KHTabBarController.m */,
+			);
+			name = "Tab Bar";
+			sourceTree = "<group>";
+		};
 		6E47749B1A4A0FF6006C0B51 = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +344,7 @@
 				6E2F97E91A9D9F52009E66B6 /* Modules */,
 				6E4774AE1A4A0FF6006C0B51 /* Pear.xcdatamodeld */,
 				6E4774A71A4A0FF6006C0B51 /* Supporting Files */,
+				6E3175CB1AA8255000BF9708 /* Tab Bar */,
 				6E0126151A4B5A1200FB1736 /* View Controllers */,
 				6E01261C1A4B622600FB1736 /* Views */,
 			);
@@ -555,6 +568,7 @@
 				6E7D17081A886073000502BE /* KHRegisterDataManager.m in Sources */,
 				6E4774AA1A4A0FF6006C0B51 /* main.m in Sources */,
 				6E4774B01A4A0FF6006C0B51 /* Pear.xcdatamodeld in Sources */,
+				6E3175CE1AA8257500BF9708 /* KHTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
