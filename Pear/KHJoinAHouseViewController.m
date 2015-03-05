@@ -45,6 +45,7 @@
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    self.joinAHouseView = view;
 }
 
 - (void)_bindViewModel {

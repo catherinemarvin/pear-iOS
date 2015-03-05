@@ -35,10 +35,12 @@
 - (void)_initializeAutolayout {
     [self.houseNameField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
+        make.left.and.right.equalTo(self);
     }];
     
     [self.passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.houseNameField.mas_bottom);
+        make.left.and.right.equalTo(self.passwordField);
     }];
 }
 
