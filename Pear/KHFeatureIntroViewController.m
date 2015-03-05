@@ -123,10 +123,11 @@
 
 - (void)_setupFooter {
     [self.view addSubview:self.footer];
+    self.footer.backgroundColor = [UIColor colorWithHexString:@"fed136"];
     
     [self.footer addSubview:self.signupButton];
     self.signupButton.backgroundColor = [UIColor colorWithHexString:@"fed136"];
-    [self.signupButton setTitle:[NSLocalizedString(@"Let's go!", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
+    [self.signupButton setTitle:[NSLocalizedString(@"Sign up", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
     self.signupButton.titleLabel.font = [UIFont boldWithSize:14];
     [self.signupButton addTarget:self action:@selector(_signupButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -135,7 +136,7 @@
     
     [self.footer addSubview:self.loginButton];
     self.loginButton.backgroundColor = self.signupButton.backgroundColor;
-    [self.loginButton setTitle:[NSLocalizedString(@"Sign up", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
+    [self.loginButton setTitle:[NSLocalizedString(@"Log in", nil) uppercaseStringWithLocale:[NSLocale currentLocale]] forState:UIControlStateNormal];
     self.loginButton.titleLabel.font = self.signupButton.titleLabel.font;
     [self.loginButton addTarget:self action:@selector(_loginButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -160,10 +161,11 @@
         make.right.equalTo(self.divider.mas_left);
     }];
     
+    CGFloat dividerPadding = 10.0f;
     [self.divider mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.and.bottom.equalTo(self.footer);
+        make.height.mas_equalTo(buttonHeight - dividerPadding);
         make.width.mas_equalTo(1);
-        make.centerX.equalTo(self.footer);
+        make.center.equalTo(self.footer);
     }];
     
     [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
