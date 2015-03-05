@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "KHJoinAHouseDataManagerDelegate.h"
 
+@class RACSignal;
+
 @interface KHJoinAHouseDataManager : NSObject
 
 - (instancetype)initWithDelegate:(id<KHJoinAHouseDataManagerDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
-- (void)joinWithHouseName:(NSString *)houseName password:(NSString *)password;
+- (RACSignal *)joinWithHouseName:(NSString *)houseName password:(NSString *)password;
 
 @end

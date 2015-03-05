@@ -32,15 +32,11 @@ static NSString *const KHkPasswordKey = @"password";
     return self;
 }
 
-- (void)joinWithHouseName:(NSString *)houseName password:(NSString *)password {
+- (RACSignal *)joinWithHouseName:(NSString *)houseName password:(NSString *)password {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:houseName forKey:KHkHouseNameKey];
     [params setValue:password forKey:KHkPasswordKey];
-    [self.manager get:@"join_house" parameters:params success:^(id responseObject) {
-        NSLog(@"%@", responseObject);
-    } failure:^(NSDictionary *errorDictionary, NSError *error) {
-        NSLog(@"%@", errorDictionary);
-    }];
+    return [self.manager get:@"join_house" parameters:params];
 }
 
 @end

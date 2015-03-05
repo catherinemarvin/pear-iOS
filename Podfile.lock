@@ -6,6 +6,9 @@ PODS:
     - AFNetworking/Security (= 2.5.0)
     - AFNetworking/Serialization (= 2.5.0)
     - AFNetworking/UIKit (= 2.5.0)
+  - AFNetworking-RACExtensions (0.1.6):
+    - AFNetworking (~> 2.0)
+    - ReactiveCocoa (~> 2.0)
   - AFNetworking/NSURLConnection (2.5.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -43,6 +46,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AFNetworking-RACExtensions
   - CocoaLumberjack
   - MagicalRecord
   - Mantle
@@ -52,6 +56,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  AFNetworking-RACExtensions: dd55d08dbfa013b9e118d5c1a5e4b58b63e734e1
   CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe

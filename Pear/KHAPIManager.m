@@ -8,6 +8,7 @@
 
 #import "KHAPIManager.h"
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import <AFNetworking-RACExtensions/AFHTTPRequestOperationManager+RACSupport.h>
 
 @interface KHAPIManager ()
 
@@ -58,6 +59,15 @@ static NSString *KHkPearSoapBaseUrl = @"http://pear-soap.herokuapp.com/api/v1.0/
         
         failure(json, error);
     }];
+}
+
+- (RACSignal *)get:(NSString *)url parameters:(NSDictionary *)parameters {
+    return [[[self.manager rac_GET:url parameters:parameters] logError] replayLazily];
+}
+
+- (RACSignal *)post:(NSString *)url parameters:(NSDictionary *)parameters {
+    return [[[self.manager rac_POST:url parameters:parameters] logError] replayLazily];
+    
 }
 
 @end

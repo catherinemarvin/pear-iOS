@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class RACSignal;
+
 @interface KHAPIManager : NSObject
 
 - (void)get:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSDictionary *errorDictionary, NSError *error))failure;
 - (void)post:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSDictionary *errorDictionary, NSError *error))failure;
 
+- (RACSignal *)get:(NSString *)url parameters:(NSDictionary *)parameters;
+
+- (RACSignal *)post:(NSString *)url parameters:(NSDictionary *)parameters;
 @end

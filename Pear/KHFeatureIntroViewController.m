@@ -22,6 +22,9 @@
 #import <Masonry/Masonry.h>
 #import "UIFont+KHAdditions.h"
 
+// Temporary
+#import "KHJoinAHouseViewController.h"
+
 @interface KHFeatureIntroViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) KHFeatureIntroductionDataSource *dataSource;
@@ -197,10 +200,13 @@
 
 #pragma mark - Button Actions
 
+
 - (void)_signupButtonTapped:(id)sender {
-    KHSignUpViewController *vc = [[KHSignUpViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:nav animated:YES completion:nil];
+    KHJoinAHouseViewController *vc = [[KHJoinAHouseViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+//    KHSignUpViewController *vc = [[KHSignUpViewController alloc] init];
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+//    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)_loginButtonTapped:(id)sender {

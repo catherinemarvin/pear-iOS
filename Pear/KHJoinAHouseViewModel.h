@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+
+@class RACCommand;
+
 @interface KHJoinAHouseViewModel : NSObject
 
 @property (nonatomic, strong) NSString *houseName;
 @property (nonatomic, strong) NSString *housePassword;
 @property (nonatomic, strong, readonly) NSString *buttonTitle;
+
+@property (nonatomic, strong) RACCommand *joinHouseCommand;
 
 @end

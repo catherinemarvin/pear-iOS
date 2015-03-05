@@ -12,6 +12,7 @@ pod 'CocoaLumberjack'
 pod 'MBProgressHUD'
 pod 'Mantle'
 pod 'ReactiveCocoa'
+pod 'AFNetworking-RACExtensions'
 
 end
 

@@ -54,6 +54,11 @@
     RAC(self.viewModel, housePassword) = [self.joinAHouseView.passwordField rac_textSignal];
     RAC(self.joinAHouseView.joinHouseButton.titleLabel, text) = RACObserve(self.viewModel, buttonTitle);
     [self.joinAHouseView.joinHouseButton rac_liftSelector:@selector(setTitle:forState:) withSignals:RACObserve(self.viewModel, buttonTitle), [RACSignal return:@(UIControlStateNormal)], nil];
+    
+    RACCommand *joinHouseCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [self.viewModel joinHouse];
+    }];
+    
 }
 
 @end
