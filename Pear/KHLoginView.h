@@ -13,6 +13,5 @@
 @property (nonatomic, strong, readonly) UITextField *usernameField;
 @property (nonatomic, strong, readonly) UITextField *passwordField;
 @property (nonatomic, strong, readonly) UIButton *signInButton;
-@property (nonatomic, strong, readonly) UIButton *signUpButton;
 
 @end

@@ -17,7 +17,6 @@
 @property (nonatomic, strong) UITextField *usernameField;
 @property (nonatomic, strong) UITextField *passwordField;
 @property (nonatomic, strong) UIButton *signInButton;
-@property (nonatomic, strong) UIButton *signUpButton;
 
 @end
 
@@ -50,11 +49,6 @@ static CGFloat KHkButtonHeight = 44.0f;
         [_signInButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"79B4D5"]] forState:UIControlStateNormal];
         [self addSubview:_signInButton];
         
-        _signUpButton = [[UIButton alloc] init];
-        [_signUpButton setTitle:NSLocalizedString(@"Sign up", nil) forState:UIControlStateNormal];
-        [_signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self addSubview:_signUpButton];
-        
         [self _initializeAutolayout];
     }
     return self;
@@ -85,14 +79,6 @@ static CGFloat KHkButtonHeight = 44.0f;
         make.width.equalTo(self.usernameField);
         make.height.equalTo(@(KHkButtonHeight));
     }];
-    
-    [self.signUpButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.top.equalTo(self.signInButton.mas_bottom).with.offset(verticalPadding);
-        make.width.equalTo(self.usernameField);
-        make.height.equalTo(@(KHkButtonHeight));
-    }];
-    
 }
 
 - (void)_setupElement:(UIView *)view {

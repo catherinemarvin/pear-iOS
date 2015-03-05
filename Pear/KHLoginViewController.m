@@ -44,7 +44,6 @@
     loginView.usernameField.delegate = self;
     loginView.passwordField.delegate = self;
     [loginView.signInButton addTarget:self action:@selector(_attemptLogin) forControlEvents:UIControlEventTouchUpInside];
-    [loginView.signUpButton addTarget:self action:@selector(_signUpTapped:) forControlEvents:UIControlEventTouchUpInside];
     [loginView setCenter:scroll.center];
     
     [scroll addSubview:loginView];
@@ -60,11 +59,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _setBarButtonItems];
     
     self.title = NSLocalizedString(@"Login", nil);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+}
+
+- (void)_setBarButtonItems {
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(_cancelTapped:)];
+    self.navigationItem.leftBarButtonItem = done;
 }
 
 #pragma mark - Keyboard Notifications
@@ -112,13 +117,8 @@
     }
 }
 
-#pragma mark - Button Tap
-- (void)_signUpTapped:(id)sender {
-    KHSignUpViewController *signUp = [[KHSignUpViewController alloc] init];
-    [self.navigationController pushViewController:signUp animated:YES];
-}
-
 #pragma mark - Login
+
 - (void)_attemptLogin {
     if ([self _validateFields]) {
         NSString *username = self.loginView.usernameField.text;
@@ -147,6 +147,12 @@
     } else {
         return YES;
     }
+}
+
+#pragma mark - Button Taps
+
+- (void)_cancelTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - KHLoginDataManagerDelegate
