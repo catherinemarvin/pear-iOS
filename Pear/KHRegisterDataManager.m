@@ -34,11 +34,16 @@ static NSString *const KHkPasswordKey = @"password";
     [params setValue:username forKey:KHkUsernameKey];
     [params setValue:password forKey:KHkPasswordKey];
     
-    [self.manager post:@"register" parameters:params success:^(id responseObject) {
-        NSLog(@"%@", responseObject);
-    } failure:^(NSDictionary *errorDictionary, NSError *error) {
-        NSLog(@"%@", errorDictionary);
-    }];
+    [self.delegate registerSucceeded:nil];
+    
+#warning - TODO: Hook up actual implementation
+//    [self.manager post:@"register" parameters:params success:^(id responseObject) {
+//        // Todo: Fix
+//        [self.delegate registerSucceeded:nil];
+//    } failure:^(NSDictionary *errorDictionary, NSError *error) {
+//        NSLog(@"%@", errorDictionary);
+//        [self.delegate registerFailed:error];
+//    }];
 }
 
 @end

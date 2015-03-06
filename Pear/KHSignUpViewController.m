@@ -6,10 +6,16 @@
 //  Copyright (c) 2014 Kevin Hwang. All rights reserved.
 //
 
+// Views
 #import "KHSignUpViewController.h"
 #import "KHSignUpView.h"
+
+#import "KHJoinAHouseViewController.h"
+
+// Data Manager
 #import "KHRegisterDataManager.h"
 #import "KHRegisterDataManagerDelegate.h"
+
 
 @interface KHSignUpViewController ()<UITextFieldDelegate, KHRegisterDataManagerDelegate>
 
@@ -157,7 +163,10 @@
 #pragma mark - KHRegisterDataManagerDelegate
 
 - (void)registerSucceeded:(NSString *)key {
+#warning TODO: Store key in NSUserDefaults
     
+    KHJoinAHouseViewController *vc = [[KHJoinAHouseViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)registerFailed:(NSError *)error {
