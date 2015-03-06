@@ -49,7 +49,11 @@
     RAC(self.view.joinHouseButton.titleLabel, text) = RACObserve(self.viewModel, buttonTitle);
     [self.view.joinHouseButton rac_liftSelector:@selector(setTitle:forState:) withSignals:RACObserve(self.viewModel, buttonTitle), [RACSignal return:@(UIControlStateNormal)], nil];
     
-    self.view.joinHouseButton.rac_command = self.viewModel.joinHouseCommand;
+    @weakify(self);
+    [[self.view.joinHouseButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.viewModel joinOrCreateHouse];
+    }];
 }
 
 @end

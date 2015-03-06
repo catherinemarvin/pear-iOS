@@ -16,7 +16,6 @@
 
 @interface KHJoinAHouseViewModel()
 
-@property (nonatomic, strong) RACSignal *formValidSignal;
 @property (nonatomic, strong) KHJoinAHouseDataManager *dataManager;
 
 @end
@@ -30,16 +29,8 @@
     return self;
 }
 
-- (RACCommand *)joinHouseCommand {
-    if (!_joinHouseCommand) {
-        NSString *houseName = self.houseName;
-        NSString *housePassword = self.housePassword;
-        _joinHouseCommand = [[RACCommand alloc] initWithEnabled:self.formValidSignal signalBlock:^RACSignal *(id input) {
-            return [self.dataManager joinWithHouseName:houseName password:housePassword];
-        }];
-    }
-    return _joinHouseCommand;
+- (void)joinOrCreateHouse {
+    NSLog(@"Wahoo");
 }
-
 
 @end

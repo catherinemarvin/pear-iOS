@@ -17,6 +17,6 @@
 @property (nonatomic, strong) NSString *housePassword;
 @property (nonatomic, strong, readonly) NSString *buttonTitle;
 
-@property (nonatomic, strong) RACCommand *joinHouseCommand;
+- (void)joinOrCreateHouse;
 
 @end
