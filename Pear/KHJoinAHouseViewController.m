@@ -43,9 +43,6 @@
     [self _bindViewModel];
 }
 
-- (void)_setupCustomView {
-}
-
 - (void)_bindViewModel {
     RAC(self.viewModel, houseName) = [self.view.houseNameField rac_textSignal];
     RAC(self.viewModel, housePassword) = [self.view.passwordField rac_textSignal];
