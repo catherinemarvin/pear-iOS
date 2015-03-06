@@ -60,7 +60,7 @@
 - (void)_initializeAutolayout {
     CGFloat smallMargin = 20.0f;
     [self.container mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.passwordField);
+        make.bottom.equalTo(self.joinHouseButton);
         make.center.equalTo(self);
         make.left.equalTo(self).with.offset(smallMargin);
         make.right.equalTo(self).with.offset(-smallMargin);
