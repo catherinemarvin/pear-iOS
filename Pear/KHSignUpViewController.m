@@ -166,7 +166,7 @@
 #warning TODO: Store key in NSUserDefaults
     
     KHJoinAHouseViewController *vc = [[KHJoinAHouseViewController alloc] init];
-    [self.navigationController setViewControllers:@[vc] animated:YES];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)registerFailed:(NSError *)error {
