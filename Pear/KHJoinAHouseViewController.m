@@ -19,7 +19,7 @@
 
 @interface KHJoinAHouseViewController ()
 
-@property (nonatomic, strong) KHJoinAHouseView *joinAHouseView;
+@property (nonatomic, strong) KHJoinAHouseView *view;
 @property (nonatomic, strong) KHJoinAHouseViewModel *viewModel;
 
 @end
@@ -33,29 +33,26 @@
     return self;
 }
 
+- (void)loadView {
+    KHJoinAHouseView *view = [[KHJoinAHouseView alloc] init];
+    self.view = view;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self _setupCustomView];
     [self _bindViewModel];
 }
 
 - (void)_setupCustomView {
-    KHJoinAHouseView *view = [[KHJoinAHouseView alloc] init];
-    [self.view addSubview:view];
-    
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    self.joinAHouseView = view;
 }
 
 - (void)_bindViewModel {
-    RAC(self.viewModel, houseName) = [self.joinAHouseView.houseNameField rac_textSignal];
-    RAC(self.viewModel, housePassword) = [self.joinAHouseView.passwordField rac_textSignal];
-    RAC(self.joinAHouseView.joinHouseButton.titleLabel, text) = RACObserve(self.viewModel, buttonTitle);
-    [self.joinAHouseView.joinHouseButton rac_liftSelector:@selector(setTitle:forState:) withSignals:RACObserve(self.viewModel, buttonTitle), [RACSignal return:@(UIControlStateNormal)], nil];
+    RAC(self.viewModel, houseName) = [self.view.houseNameField rac_textSignal];
+    RAC(self.viewModel, housePassword) = [self.view.passwordField rac_textSignal];
+    RAC(self.view.joinHouseButton.titleLabel, text) = RACObserve(self.viewModel, buttonTitle);
+    [self.view.joinHouseButton rac_liftSelector:@selector(setTitle:forState:) withSignals:RACObserve(self.viewModel, buttonTitle), [RACSignal return:@(UIControlStateNormal)], nil];
     
-    self.joinAHouseView.joinHouseButton.rac_command = self.viewModel.joinHouseCommand;
+    self.view.joinHouseButton.rac_command = self.viewModel.joinHouseCommand;
 }
 
 @end

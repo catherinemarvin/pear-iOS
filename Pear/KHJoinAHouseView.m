@@ -26,6 +26,8 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        self.backgroundColor = [UIColor whiteColor];
+        
         _container = [[UIView alloc] init];
         [self addSubview:_container];
         
